@@ -38,31 +38,33 @@ export default function Navbar() {
         </ul>
       </div>
 
-      {/* Mobile layout - logo + hamburger on the left */}
-      <div className="md:hidden flex flex-col items-start ps-5 pt-5 gap-1">
-        <a href="#hero" className="block hover:opacity-70 transition-opacity">
-          <img
-            src="/photos/hila-logo.png"
-            alt="הילה"
-            className="w-[200px] h-auto"
-            style={{ filter: 'brightness(0) invert(1)' }}
-          />
-        </a>
+      {/* Mobile layout - logo + hamburger on the left, hamburger centered under logo */}
+      <div className="md:hidden flex justify-end pt-5 pe-5">
+        <div className="flex flex-col items-center gap-1">
+          <a href="#hero" className="block hover:opacity-70 transition-opacity">
+            <img
+              src="/photos/hila-logo.png"
+              alt="הילה"
+              className="w-[200px] h-auto"
+              style={{ filter: 'brightness(0) invert(1)' }}
+            />
+          </a>
 
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="p-1 text-off-white"
-          aria-label={isOpen ? 'סגור תפריט' : 'פתח תפריט'}
-          aria-expanded={isOpen}
-        >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-            {isOpen ? (
-              <path d="M6 6l12 12M6 18L18 6" />
-            ) : (
-              <path d="M4 8h16M4 16h16" />
-            )}
-          </svg>
-        </button>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-1 text-off-white"
+            aria-label={isOpen ? 'סגור תפריט' : 'פתח תפריט'}
+            aria-expanded={isOpen}
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              {isOpen ? (
+                <path d="M6 6l12 12M6 18L18 6" />
+              ) : (
+                <path d="M4 8h16M4 16h16" />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
