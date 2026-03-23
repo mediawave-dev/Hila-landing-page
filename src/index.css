@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: oklch(0.96 0.01 80);
+  --color-cream-dark: oklch(0.92 0.015 75);
+  --color-sand: oklch(0.88 0.025 70);
+  --color-taupe: oklch(0.65 0.03 60);
+  --color-warm-brown: oklch(0.45 0.04 55);
+  --color-charcoal: oklch(0.25 0.02 50);
+  --color-soft-black: oklch(0.18 0.01 50);
+  --color-off-white: oklch(0.99 0.005 90);
+  --color-accent: oklch(0.72 0.06 55);
+
+  --font-serif: "Frank Ruhl Libre", serif;
+  --font-sans: "Heebo", sans-serif;
+}
+
+html {
+  direction: rtl;
+  unicode-bidi: embed;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-charcoal);
+  background-color: var(--color-off-white);
+  line-height: 1.7;
+  font-weight: 300;
+  word-spacing: 0.05em;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+section[id] {
+  scroll-margin-block-start: 80px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
