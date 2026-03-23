@@ -9,10 +9,10 @@ export default function Hero() {
         <img
           src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80"
           alt=""
-          className="w-full h-full object-cover opacity-90"
+          className="w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-soft-black/30 via-soft-black/10 to-off-white/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-soft-black/15 via-transparent to-off-white/60" />
       </div>
 
       {/* Content */}
@@ -23,13 +23,6 @@ export default function Hero() {
         <p className="font-serif text-xl md:text-3xl font-light text-off-white/90 drop-shadow-md">
           רגעים שנשארים לנצח
         </p>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute inset-block-end-8 inset-inline-start-1/2 -translate-x-1/2 z-10">
-        <div className="w-6 h-10 border-2 border-off-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-off-white/70 rounded-full mt-2 animate-bounce" />
-        </div>
       </div>
     </section>
   )

@@ -9,8 +9,6 @@
   --color-charcoal: oklch(0.25 0.02 50);
   --color-soft-black: oklch(0.18 0.01 50);
   --color-off-white: oklch(0.99 0.005 90);
-  --color-accent: oklch(0.72 0.06 55);
-
   --font-serif: "Frank Ruhl Libre", serif;
   --font-sans: "Heebo", sans-serif;
 }
@@ -44,7 +42,7 @@ section[id] {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-warm-brown);
   outline-offset: 2px;
 }
 

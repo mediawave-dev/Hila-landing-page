@@ -54,6 +54,7 @@ Use these as Tailwind classes: `bg-cream`, `text-charcoal`, `hover:text-warm-bro
 
 ## Placeholder Content
 
-- Images are from Unsplash CDN URLs — replace with real photos
-- WhatsApp number is `972500000000` in `Contact.jsx` — update to real number
-- Instagram link points to `https://instagram.com` — update to real profile
+- Most images are from Unsplash CDN URLs — replace with real photos
+- WhatsApp uses click-to-chat link: `https://wa.me/message/N4I2BDIEKGBYF1`
+- Instagram: `https://www.instagram.com/hila.photo.art`
+- Phone: 052-957-1799

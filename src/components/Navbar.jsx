@@ -12,22 +12,25 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="fixed inset-inline-start-0 inset-inline-end-0 inset-block-start-0 z-50 bg-off-white/90 backdrop-blur-sm">
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">
-        <a
-          href="#hero"
-          className="font-serif text-2xl font-light tracking-normal text-soft-black hover:text-warm-brown transition-colors"
-        >
-          הילה
+    <nav className="absolute inset-block-start-0 inset-inline-start-0 inset-inline-end-0 z-50">
+      <div className="w-full px-10 md:px-20 pt-5 flex items-center justify-between h-24">
+        {/* Logo - right side in RTL */}
+        <a href="#hero" className="block shrink-0 hover:opacity-70 transition-opacity">
+          <img
+            src="/photos/hila-logo.png"
+            alt="הילה"
+            className="w-[150px] h-auto"
+            style={{ filter: 'brightness(0) invert(1)' }}
+          />
         </a>
 
-        {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-8">
+        {/* Desktop nav links - left side in RTL */}
+        <ul className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm font-light text-taupe hover:text-soft-black transition-colors"
+                className="text-sm font-light text-off-white/85 hover:text-off-white transition-colors"
               >
                 {link.label}
               </a>
@@ -38,7 +41,7 @@ export default function Navbar() {
         {/* Mobile menu button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-charcoal"
+          className="md:hidden p-2 text-off-white"
           aria-label={isOpen ? 'סגור תפריט' : 'פתח תפריט'}
           aria-expanded={isOpen}
         >
@@ -54,14 +57,14 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-off-white/95 backdrop-blur-sm border-block-end border-sand">
+        <div className="md:hidden bg-soft-black/90 backdrop-blur-sm">
           <ul className="flex flex-col items-center gap-6 py-8">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-base font-light text-charcoal hover:text-warm-brown transition-colors"
+                  className="text-base font-light text-off-white/85 hover:text-off-white transition-colors"
                 >
                   {link.label}
                 </a>

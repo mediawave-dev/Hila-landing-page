@@ -16,7 +16,7 @@ export default function Contact() {
     e.preventDefault()
     const whatsappMessage = `היי הילה! 👋\nשם: ${formData.name}\nטלפון: ${formData.phone}\nשירות: ${formData.service}\nהודעה: ${formData.message}`
     window.open(
-      `https://wa.me/972500000000?text=${encodeURIComponent(whatsappMessage)}`,
+      `https://wa.me/message/N4I2BDIEKGBYF1?text=${encodeURIComponent(whatsappMessage)}`,
       '_blank'
     )
   }
@@ -117,7 +117,7 @@ export default function Contact() {
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/972500000000"
+              href="https://wa.me/message/N4I2BDIEKGBYF1"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 group"
@@ -135,7 +135,7 @@ export default function Contact() {
 
             {/* Instagram */}
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/hila.photo.art"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 group"
@@ -154,7 +154,7 @@ export default function Contact() {
 
             {/* Phone */}
             <a
-              href="tel:+972500000000"
+              href="tel:+972529571799"
               className="flex items-center gap-4 group"
             >
               <div className="w-12 h-12 rounded-full bg-cream flex items-center justify-center group-hover:bg-sand transition-colors">
@@ -163,7 +163,7 @@ export default function Contact() {
                 </svg>
               </div>
               <span className="text-charcoal font-light group-hover:text-warm-brown transition-colors">
-                050-000-0000
+                052-957-1799
               </span>
             </a>
           </div>
