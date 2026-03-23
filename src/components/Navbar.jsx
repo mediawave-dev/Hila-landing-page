@@ -12,20 +12,19 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="absolute inset-block-start-0 inset-inline-start-0 inset-inline-end-0 z-50">
-      <div className="w-full px-10 md:px-20 pt-5 flex items-center justify-between h-24">
-        {/* Logo - right side in RTL */}
+    <nav className="absolute top-0 left-0 right-0 w-full z-50">
+      {/* Desktop layout */}
+      <div className="hidden md:flex w-full px-20 pt-5 items-center justify-between h-24">
         <a href="#hero" className="block shrink-0 hover:opacity-70 transition-opacity">
           <img
             src="/photos/hila-logo.png"
             alt="הילה"
-            className="w-[150px] h-auto"
+            className="w-[180px] h-auto"
             style={{ filter: 'brightness(0) invert(1)' }}
           />
         </a>
 
-        {/* Desktop nav links - left side in RTL */}
-        <ul className="hidden md:flex items-center gap-10">
+        <ul className="flex items-center gap-10">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -37,22 +36,35 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+      </div>
 
-        {/* Mobile menu button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-off-white"
-          aria-label={isOpen ? 'סגור תפריט' : 'פתח תפריט'}
-          aria-expanded={isOpen}
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-            {isOpen ? (
-              <path d="M6 6l12 12M6 18L18 6" />
-            ) : (
-              <path d="M4 8h16M4 16h16" />
-            )}
-          </svg>
-        </button>
+      {/* Mobile layout - logo + hamburger on the left, hamburger centered under logo */}
+      <div className="md:hidden flex justify-end pt-5 pe-5">
+        <div className="flex flex-col items-center gap-1">
+          <a href="#hero" className="block hover:opacity-70 transition-opacity">
+            <img
+              src="/photos/hila-logo.png"
+              alt="הילה"
+              className="w-[200px] h-auto"
+              style={{ filter: 'brightness(0) invert(1)' }}
+            />
+          </a>
+
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-1 text-off-white"
+            aria-label={isOpen ? 'סגור תפריט' : 'פתח תפריט'}
+            aria-expanded={isOpen}
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              {isOpen ? (
+                <path d="M6 6l12 12M6 18L18 6" />
+              ) : (
+                <path d="M4 8h16M4 16h16" />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
