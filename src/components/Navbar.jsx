@@ -38,8 +38,8 @@ export default function Navbar() {
         </ul>
       </div>
 
-      {/* Mobile layout - centered logo + hamburger below */}
-      <div className="md:hidden flex flex-col items-center pt-5 gap-2" style={{ width: '100%' }}>
+      {/* Mobile layout - logo + hamburger on the left */}
+      <div className="md:hidden flex flex-col items-start ps-5 pt-5 gap-1">
         <a href="#hero" className="block hover:opacity-70 transition-opacity">
           <img
             src="/photos/hila-logo.png"
@@ -51,7 +51,7 @@ export default function Navbar() {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="p-2 text-off-white"
+          className="p-1 text-off-white"
           aria-label={isOpen ? 'סגור תפריט' : 'פתח תפריט'}
           aria-expanded={isOpen}
         >
