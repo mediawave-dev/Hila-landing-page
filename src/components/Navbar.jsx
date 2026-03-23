@@ -13,19 +13,18 @@ export default function Navbar() {
 
   return (
     <nav className="absolute inset-block-start-0 inset-inline-start-0 inset-inline-end-0 z-50">
-      <div className="w-full px-10 md:px-20 pt-5 flex items-center justify-between h-24">
-        {/* Logo - right side in RTL */}
+      {/* Desktop layout */}
+      <div className="hidden md:flex w-full px-20 pt-5 items-center justify-between h-24">
         <a href="#hero" className="block shrink-0 hover:opacity-70 transition-opacity">
           <img
             src="/photos/hila-logo.png"
             alt="הילה"
-            className="w-[150px] h-auto"
+            className="w-[180px] h-auto"
             style={{ filter: 'brightness(0) invert(1)' }}
           />
         </a>
 
-        {/* Desktop nav links - left side in RTL */}
-        <ul className="hidden md:flex items-center gap-10">
+        <ul className="flex items-center gap-10">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -37,15 +36,26 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+      </div>
 
-        {/* Mobile menu button */}
+      {/* Mobile layout - centered logo + hamburger below */}
+      <div className="md:hidden flex flex-col items-center pt-6 gap-3">
+        <a href="#hero" className="block hover:opacity-70 transition-opacity">
+          <img
+            src="/photos/hila-logo.png"
+            alt="הילה"
+            className="w-[200px] h-auto"
+            style={{ filter: 'brightness(0) invert(1)' }}
+          />
+        </a>
+
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-off-white"
+          className="p-2 text-off-white"
           aria-label={isOpen ? 'סגור תפריט' : 'פתח תפריט'}
           aria-expanded={isOpen}
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             {isOpen ? (
               <path d="M6 6l12 12M6 18L18 6" />
             ) : (
