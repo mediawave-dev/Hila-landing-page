@@ -39,7 +39,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile layout - centered logo + hamburger below */}
-      <div className="md:hidden flex flex-col items-center pt-6 gap-3">
+      <div className="md:hidden flex flex-col items-center justify-center w-full pt-6 gap-3" dir="ltr">
         <a href="#hero" className="block hover:opacity-70 transition-opacity">
           <img
             src="/photos/hila-logo.png"
