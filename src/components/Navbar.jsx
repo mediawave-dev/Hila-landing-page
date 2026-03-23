@@ -12,7 +12,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="absolute inset-block-start-0 inset-inline-start-0 inset-inline-end-0 z-50">
+    <nav className="absolute top-0 left-0 right-0 w-full z-50">
       {/* Desktop layout */}
       <div className="hidden md:flex w-full px-20 pt-5 items-center justify-between h-24">
         <a href="#hero" className="block shrink-0 hover:opacity-70 transition-opacity">
@@ -39,7 +39,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile layout - centered logo + hamburger below */}
-      <div className="md:hidden flex flex-col items-center justify-center w-full pt-6 gap-3" dir="ltr">
+      <div className="md:hidden flex flex-col items-center pt-5 gap-2" style={{ width: '100%' }}>
         <a href="#hero" className="block hover:opacity-70 transition-opacity">
           <img
             src="/photos/hila-logo.png"
