@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 
 const slides = [
   {
@@ -21,20 +21,47 @@ const slides = [
 
 export default function Hero() {
   const [current, setCurrent] = useState(0)
+  const touchStart = useRef(null)
+  const timerRef = useRef(null)
 
   const nextSlide = useCallback(() => {
     setCurrent(prev => (prev + 1) % slides.length)
   }, [])
 
-  useEffect(() => {
-    const timer = setInterval(nextSlide, 5000)
-    return () => clearInterval(timer)
+  const prevSlide = useCallback(() => {
+    setCurrent(prev => (prev - 1 + slides.length) % slides.length)
+  }, [])
+
+  const resetTimer = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current)
+    timerRef.current = setInterval(nextSlide, 5000)
   }, [nextSlide])
+
+  useEffect(() => {
+    timerRef.current = setInterval(nextSlide, 5000)
+    return () => clearInterval(timerRef.current)
+  }, [nextSlide])
+
+  const handleTouchStart = (e) => {
+    touchStart.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = (e) => {
+    if (touchStart.current === null) return
+    const delta = touchStart.current - e.changedTouches[0].clientX
+    touchStart.current = null
+    if (Math.abs(delta) < 50) return
+    if (delta > 0) nextSlide()
+    else prevSlide()
+    resetTimer()
+  }
 
   return (
     <section
       id="hero"
-      className="relative h-[100dvh] flex items-center justify-center overflow-hidden"
+      className="relative h-[100dvh] flex items-center justify-center overflow-hidden touch-pan-y"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       {/* Image slides */}
       {slides.map((slide, i) => (
@@ -72,7 +99,7 @@ export default function Hero() {
         {slides.map((_, i) => (
           <button
             key={i}
-            onClick={() => setCurrent(i)}
+            onClick={() => { setCurrent(i); resetTimer() }}
             className={`h-[2px] rounded-full transition-all duration-500 ${
               i === current ? 'w-10 bg-off-white' : 'w-4 bg-off-white/30 hover:bg-off-white/50'
             }`}
