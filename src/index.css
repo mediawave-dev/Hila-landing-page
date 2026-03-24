@@ -9,6 +9,8 @@
   --color-charcoal: oklch(0.25 0.02 50);
   --color-soft-black: oklch(0.18 0.01 50);
   --color-off-white: oklch(0.99 0.005 90);
+  --color-deep-black: oklch(0.10 0.005 50);
+  --color-warm-gray: oklch(0.40 0.02 55);
   --font-serif: "Frank Ruhl Libre", serif;
   --font-sans: "Heebo", sans-serif;
 }
@@ -22,7 +24,7 @@ html {
 body {
   font-family: var(--font-sans);
   color: var(--color-charcoal);
-  background-color: var(--color-off-white);
+  background-color: var(--color-deep-black);
   line-height: 1.7;
   font-weight: 300;
   word-spacing: 0.05em;
@@ -46,10 +48,40 @@ section[id] {
   outline-offset: 2px;
 }
 
+/* Scroll reveal animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Parallax section */
+.parallax-section {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+  .parallax-section {
+    background-attachment: scroll;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
   }
 }
