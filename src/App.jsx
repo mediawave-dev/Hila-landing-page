@@ -25,6 +25,29 @@ export default function App() {
     return () => observer.disconnect()
   }, [])
 
+  // Scroll parallax for images with data-parallax attribute
+  useEffect(() => {
+    let ticking = false
+    const handleScroll = () => {
+      if (ticking) return
+      ticking = true
+      requestAnimationFrame(() => {
+        document.querySelectorAll('[data-parallax]').forEach(el => {
+          const rect = el.getBoundingClientRect()
+          if (rect.bottom > 0 && rect.top < window.innerHeight) {
+            const speed = parseFloat(el.dataset.parallax)
+            const centerOffset = rect.top + rect.height / 2 - window.innerHeight / 2
+            el.style.transform = `translateY(${centerOffset * speed}px) scale(1.1)`
+          }
+        })
+        ticking = false
+      })
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <>
       <Navbar />

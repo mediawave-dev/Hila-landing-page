@@ -8,7 +8,8 @@ export default function About() {
             <img
               src="/photos/IMG_5502-web.jpg"
               alt="הילה - צלמת"
-              className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+              className="w-full h-full object-cover"
+              data-parallax="-0.08"
               loading="lazy"
             />
           </div>

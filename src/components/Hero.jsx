@@ -21,15 +21,27 @@ const slides = [
 
 export default function Hero() {
   const [current, setCurrent] = useState(0)
+  const [slideKey, setSlideKey] = useState(0)
   const touchStart = useRef(null)
   const timerRef = useRef(null)
 
+  const goToSlide = useCallback((n) => {
+    setCurrent(n)
+    setSlideKey(prev => prev + 1)
+  }, [])
+
   const nextSlide = useCallback(() => {
-    setCurrent(prev => (prev + 1) % slides.length)
+    setCurrent(prev => {
+      setSlideKey(k => k + 1)
+      return (prev + 1) % slides.length
+    })
   }, [])
 
   const prevSlide = useCallback(() => {
-    setCurrent(prev => (prev - 1 + slides.length) % slides.length)
+    setCurrent(prev => {
+      setSlideKey(k => k + 1)
+      return (prev - 1 + slides.length) % slides.length
+    })
   }, [])
 
   const resetTimer = useCallback(() => {
@@ -72,9 +84,10 @@ export default function Hero() {
           }`}
         >
           <img
+            key={i === current ? `active-${slideKey}` : `idle-${i}`}
             src={slide.src}
             alt={slide.alt}
-            className="w-full h-full object-cover scale-105"
+            className={`w-full h-full object-cover ${i === current ? `kenburns-${i % 4}` : 'scale-[1.05]'}`}
           />
         </div>
       ))}
@@ -99,7 +112,7 @@ export default function Hero() {
         {slides.map((_, i) => (
           <button
             key={i}
-            onClick={() => { setCurrent(i); resetTimer() }}
+            onClick={() => { goToSlide(i); resetTimer() }}
             className={`h-[2px] rounded-full transition-all duration-500 ${
               i === current ? 'w-10 bg-off-white' : 'w-4 bg-off-white/30 hover:bg-off-white/50'
             }`}

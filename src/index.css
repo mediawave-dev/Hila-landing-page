@@ -61,6 +61,34 @@ section[id] {
   transform: translateY(0);
 }
 
+/* Ken Burns effect — 4 directional variants for hero slides */
+@keyframes kenburns-0 {
+  from { transform: scale(1.02); }
+  to { transform: scale(1.15) translate(-1.5%, -0.5%); }
+}
+@keyframes kenburns-1 {
+  from { transform: scale(1.02); }
+  to { transform: scale(1.13) translate(1%, -1.5%); }
+}
+@keyframes kenburns-2 {
+  from { transform: scale(1.15); }
+  to { transform: scale(1.02) translate(-0.5%, 1%); }
+}
+@keyframes kenburns-3 {
+  from { transform: scale(1.12); }
+  to { transform: scale(1.02) translate(1.5%, 0.5%); }
+}
+
+.kenburns-0 { animation: kenburns-0 7s ease-out forwards; }
+.kenburns-1 { animation: kenburns-1 7s ease-out forwards; }
+.kenburns-2 { animation: kenburns-2 7s ease-out forwards; }
+.kenburns-3 { animation: kenburns-3 7s ease-out forwards; }
+
+/* Scroll parallax images — container must have overflow:hidden */
+[data-parallax] {
+  will-change: transform;
+}
+
 /* Parallax section */
 .parallax-section {
   background-attachment: fixed;
@@ -83,5 +111,14 @@ section[id] {
   .scroll-reveal {
     opacity: 1;
     transform: none;
+  }
+  .kenburns-0,
+  .kenburns-1,
+  .kenburns-2,
+  .kenburns-3 {
+    animation: none !important;
+  }
+  [data-parallax] {
+    transform: none !important;
   }
 }
