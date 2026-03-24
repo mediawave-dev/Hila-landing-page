@@ -79,10 +79,10 @@ section[id] {
   to { transform: scale(1.02) translate(1.5%, 0.5%); }
 }
 
-.kenburns-0 { animation: kenburns-0 7s ease-out forwards; }
-.kenburns-1 { animation: kenburns-1 7s ease-out forwards; }
-.kenburns-2 { animation: kenburns-2 7s ease-out forwards; }
-.kenburns-3 { animation: kenburns-3 7s ease-out forwards; }
+.kenburns-0 { animation: kenburns-0 6s ease-out forwards; }
+.kenburns-1 { animation: kenburns-1 6s ease-out forwards; }
+.kenburns-2 { animation: kenburns-2 6s ease-out forwards; }
+.kenburns-3 { animation: kenburns-3 6s ease-out forwards; }
 
 /* Scroll parallax images — container must have overflow:hidden */
 [data-parallax] {
