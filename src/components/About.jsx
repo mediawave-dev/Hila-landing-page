@@ -2,12 +2,14 @@ export default function About() {
   return (
     <section id="about" className="py-24 md:py-32 bg-off-white">
       <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-        {/* Image */}
-        <div className="scroll-reveal">
+        {/* Image — full-bleed on mobile */}
+        <div className="scroll-reveal -mx-6 md:mx-0">
           <div className="corner-accent aspect-[3/4] overflow-hidden">
             <img
               src="/photos/IMG_5502-web.jpg"
               alt="הילה - צלמת"
+              width={800}
+              height={1067}
               className="w-full h-full object-cover"
               data-parallax="-0.08"
               loading="lazy"

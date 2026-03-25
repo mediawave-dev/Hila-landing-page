@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 const navLinks = [
   { href: '#about', label: 'קצת עלי' },
@@ -11,6 +11,8 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const menuRef = useRef(null)
+  const toggleRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60)
@@ -18,9 +20,39 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Body scroll lock when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [isOpen])
+
+  // Focus trap inside mobile menu
+  const handleMenuKeyDown = useCallback((e) => {
+    if (e.key === 'Escape') {
+      setIsOpen(false)
+      toggleRef.current?.focus()
+      return
+    }
+    if (e.key !== 'Tab' || !menuRef.current) return
+    const focusable = menuRef.current.querySelectorAll('a, button')
+    const first = focusable[0]
+    const last = focusable[focusable.length - 1]
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault()
+      last.focus()
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault()
+      first.focus()
+    }
+  }, [])
+
   return (
     <nav
-      className={`fixed top-0 inset-inline-start-0 inset-inline-end-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed top-0 inset-inline-start-0 inset-inline-end-0 w-full z-50 transition-all duration-500 pt-[env(safe-area-inset-top)] ${
         scrolled
           ? 'bg-deep-black/90 backdrop-blur-md shadow-lg shadow-black/30'
           : 'bg-transparent'
@@ -29,14 +61,14 @@ export default function Navbar() {
       {/* Desktop */}
       <div
         className={`hidden md:flex w-full px-12 lg:px-20 items-center justify-between transition-all duration-500 ${
-          scrolled ? 'h-16' : 'h-24'
+          scrolled ? 'h-20' : 'h-28'
         }`}
       >
         <a href="#hero" className="block shrink-0 hover:opacity-70 transition-opacity duration-300">
           <img
             src="/photos/hila-logo.png"
             alt="הילה"
-            className={`h-auto transition-all duration-500 ${scrolled ? 'w-[120px]' : 'w-[170px]'}`}
+            className={`h-auto transition-all duration-500 ${scrolled ? 'w-[160px]' : 'w-[260px]'}`}
             style={{ filter: 'brightness(0) invert(1)' }}
           />
         </a>
@@ -58,10 +90,12 @@ export default function Navbar() {
       {/* Mobile header */}
       <div className="md:hidden flex items-center justify-between px-5 py-4">
         <button
+          ref={toggleRef}
           onClick={() => setIsOpen(!isOpen)}
           className="relative p-2 text-off-white z-[60]"
           aria-label={isOpen ? 'סגור תפריט' : 'פתח תפריט'}
           aria-expanded={isOpen}
+          aria-controls="mobile-menu"
         >
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             {isOpen ? (
@@ -76,7 +110,7 @@ export default function Navbar() {
           <img
             src="/photos/hila-logo.png"
             alt="הילה"
-            className="w-[120px] h-auto"
+            className="w-[180px] h-auto"
             style={{ filter: 'brightness(0) invert(1)' }}
           />
         </a>
@@ -84,7 +118,13 @@ export default function Navbar() {
 
       {/* Mobile full-screen overlay */}
       <div
-        className={`md:hidden fixed inset-0 bg-deep-black/98 backdrop-blur-xl flex items-center justify-center transition-all duration-500 ${
+        ref={menuRef}
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="תפריט ניווט"
+        onKeyDown={handleMenuKeyDown}
+        className={`md:hidden fixed inset-0 bg-deep-black/98 backdrop-blur-xl flex items-center justify-center transition-all duration-500 overscroll-none ${
           isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
       >

@@ -86,6 +86,10 @@ export default function Hero() {
             ref={el => imgRefs.current[i] = el}
             src={slide.src}
             alt={slide.alt}
+            width={1920}
+            height={1280}
+            fetchPriority={i === 0 ? 'high' : 'low'}
+            loading={i === 0 ? 'eager' : 'lazy'}
             className={`w-full h-full object-cover kenburns-${i % 4}`}
           />
         </div>
@@ -106,17 +110,19 @@ export default function Hero() {
         </p>
       </div>
 
-      {/* Slide indicators */}
-      <div className="absolute bottom-10 inset-inline-start-1/2 -translate-x-1/2 z-10 flex gap-3">
+      {/* Slide indicators — padded for 44px min touch target */}
+      <div className="absolute bottom-6 inset-inline-start-1/2 -translate-x-1/2 z-10 flex gap-1">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => { setCurrent(i); resetTimer() }}
-            className={`h-[2px] rounded-full transition-all duration-500 ${
-              i === current ? 'w-10 bg-off-white' : 'w-4 bg-off-white/30 hover:bg-off-white/50'
-            }`}
+            className="py-5 px-2 group"
             aria-label={`שקופית ${i + 1}`}
-          />
+          >
+            <span className={`block h-[2px] rounded-full transition-all duration-500 ${
+              i === current ? 'w-10 bg-off-white' : 'w-4 bg-off-white/30 group-hover:bg-off-white/50'
+            }`} />
+          </button>
         ))}
       </div>
     </section>

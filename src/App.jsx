@@ -66,6 +66,12 @@ export default function App() {
 
   return (
     <>
+      <a
+        href="#about"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:inset-inline-start-4 focus:z-[100] focus:bg-soft-black focus:text-off-white focus:px-4 focus:py-2 focus:text-sm"
+      >
+        דלג לתוכן
+      </a>
       <Navbar />
       <main>
         <Hero />
@@ -98,8 +104,11 @@ export default function App() {
           <img
             src="/gallery/general/general-011.jpg"
             alt=""
+            width={1920}
+            height={1280}
             className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
             data-parallax="-0.08"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-deep-black/40" />
 

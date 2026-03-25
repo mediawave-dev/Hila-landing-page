@@ -37,10 +37,12 @@ export default function Services() {
               className="scroll-reveal group cursor-pointer"
               style={{ transitionDelay: `${index * 0.12}s` }}
             >
-              <div className="hover-frame relative aspect-[3/4] overflow-hidden mb-5">
+              <div className="hover-frame relative aspect-[3/4] overflow-hidden mb-5 -mx-6 sm:mx-0">
                 <img
                   src={service.image}
                   alt={service.title}
+                  width={800}
+                  height={1067}
                   className="w-full h-full object-cover"
                   data-parallax="-0.06"
                   loading="lazy"

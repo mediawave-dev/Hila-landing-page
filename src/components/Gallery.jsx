@@ -18,7 +18,7 @@ export default function Gallery() {
         </h2>
         <div className="scroll-reveal heading-ornament mx-auto mb-16"><span /></div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3 auto-rows-[200px] md:auto-rows-[250px]">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[2px] md:gap-3 auto-rows-[200px] md:auto-rows-[250px] -mx-6 md:mx-0">
           {galleryImages.map((image, index) => (
             <div
               key={index}
@@ -28,6 +28,8 @@ export default function Gallery() {
               <img
                 src={image.src}
                 alt={image.alt}
+                width={800}
+                height={600}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />
