@@ -7,8 +7,8 @@
  */
 export default function ParallaxBreak({
   image,
-  height = 'h-[50vh] md:h-[60vh]',
-  speed = -0.15,
+  height = 'h-[70vh] md:h-[90vh]',
+  speed = -0.1,
   topBlend,
   bottomBlend,
   objectPosition = 'center',

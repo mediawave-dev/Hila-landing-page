@@ -51,11 +51,17 @@ export default function App() {
           if (rect.bottom > 0 && rect.top < vh) {
             const speed = parseFloat(el.dataset.parallax)
             const centerOffset = rect.top + rect.height / 2 - vh / 2
+            const translation = centerOffset * speed
             // Text elements skip scale (scale is only for images to hide edges)
             const noScale = el.hasAttribute('data-parallax-text')
-            el.style.transform = noScale
-              ? `translateY(${centerOffset * speed}px)`
-              : `translateY(${centerOffset * speed}px) scale(1.1)`
+            if (noScale) {
+              el.style.transform = `translateY(${translation}px)`
+            } else {
+              // Cap translation to stay within the scale buffer (10% of container)
+              const maxShift = rect.height * 0.1
+              const capped = Math.max(-maxShift, Math.min(maxShift, translation))
+              el.style.transform = `translateY(${capped}px) scale(1.2)`
+            }
           }
         })
         ticking = false
@@ -95,7 +101,7 @@ export default function App() {
           image="/gallery/general/general-020.jpg"
           topBlend="off-white"
           bottomBlend="soft-black"
-          objectPosition="center 40%"
+          objectPosition="center 20%"
         >
           <p
             className="font-serif text-2xl md:text-4xl lg:text-5xl text-off-white/90 font-light text-center leading-relaxed"
@@ -113,7 +119,7 @@ export default function App() {
           image="/gallery/general/general-011.jpg"
           topBlend="soft-black"
           bottomBlend="off-white"
-          objectPosition="center 30%"
+          objectPosition="center 25%"
         />
 
         <Gallery />
@@ -123,7 +129,7 @@ export default function App() {
           image="/gallery/pregnancy/pregnancy-010.jpg"
           topBlend="off-white"
           bottomBlend="soft-black"
-          objectPosition="center 35%"
+          objectPosition="center 30%"
         >
           <p
             className="font-serif text-2xl md:text-4xl lg:text-5xl text-off-white/90 font-light text-center leading-relaxed"
@@ -139,10 +145,10 @@ export default function App() {
         {/* Testimonials → Contact: parallax break */}
         <ParallaxBreak
           image="/gallery/general/general-014.jpg"
-          height="h-[40vh] md:h-[50vh]"
+          height="h-[60vh] md:h-[80vh]"
           topBlend="soft-black"
           bottomBlend="cream"
-          objectPosition="center 45%"
+          objectPosition="center 25%"
         />
 
         <Contact />

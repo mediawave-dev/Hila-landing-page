@@ -11,6 +11,7 @@ export default function About() {
               width={800}
               height={1067}
               className="w-full h-full object-cover"
+              style={{ objectPosition: 'center 20%' }}
               data-parallax="-0.08"
               loading="lazy"
             />

@@ -3,6 +3,7 @@ const services = [
     title: 'משפחה',
     description: 'צילומי משפחה טבעיים ומלאי חיים — כי כל משפחה היא סיפור ייחודי.',
     image: '/gallery/family/family-009.jpg',
+    objectPosition: 'center 30%',
   },
   {
     title: 'זוגיות',
@@ -13,11 +14,13 @@ const services = [
     title: 'הריון',
     description: 'תיעוד התקופה הקסומה הזו באור רך ובאווירה אינטימית.',
     image: '/gallery/general/general-007.jpg',
+    objectPosition: 'center 30%',
   },
   {
     title: 'אירועים',
     description: 'מרגעי ההכנות ועד לריקוד האחרון — הכל נתפס בעדשה.',
     image: '/gallery/family/family-041.jpg',
+    objectPosition: 'center 40%',
   },
 ]
 
@@ -44,6 +47,7 @@ export default function Services() {
                   width={800}
                   height={1067}
                   className="w-full h-full object-cover"
+                  style={service.objectPosition ? { objectPosition: service.objectPosition } : undefined}
                   data-parallax="-0.06"
                   loading="lazy"
                 />

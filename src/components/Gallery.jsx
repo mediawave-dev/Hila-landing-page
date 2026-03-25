@@ -1,11 +1,11 @@
 const galleryImages = [
-  { src: '/gallery/general/general-010.jpg', alt: 'צילום משפחה', span: 'row-span-2' },
+  { src: '/gallery/general/general-010.jpg', alt: 'צילום משפחה', span: 'row-span-2', objectPosition: 'center 25%' },
   { src: '/gallery/family/family-017.jpg', alt: 'אבא ובת' },
   { src: '/gallery/pregnancy/pregnancy-025.jpg', alt: 'צילום זוגי בחוף' },
-  { src: '/gallery/pregnancy/pregnancy-001.jpg', alt: 'צילום הריון' },
-  { src: '/gallery/family/family-031.jpg', alt: 'צילום משפחה בטבע', span: 'row-span-2' },
+  { src: '/gallery/pregnancy/pregnancy-001.jpg', alt: 'צילום הריון', objectPosition: 'center 30%' },
+  { src: '/gallery/family/family-031.jpg', alt: 'צילום משפחה בטבע', span: 'row-span-2', objectPosition: 'center 45%' },
   { src: '/gallery/general/general-012.jpg', alt: 'צילום משפחתי' },
-  { src: '/gallery/pregnancy/pregnancy-015.jpg', alt: 'צללית הריון' },
+  { src: '/gallery/pregnancy/pregnancy-015.jpg', alt: 'צללית הריון', objectPosition: 'center 35%' },
   { src: '/gallery/family/family-040.jpg', alt: 'ניובורן' },
 ]
 
@@ -31,6 +31,7 @@ export default function Gallery() {
                 width={800}
                 height={600}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
                 loading="lazy"
               />
               {/* Hover overlay */}
