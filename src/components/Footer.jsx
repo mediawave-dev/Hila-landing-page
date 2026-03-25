@@ -1,6 +1,24 @@
 export default function Footer() {
   return (
-    <footer className="py-14 bg-deep-black text-center">
+    <footer className="py-16 bg-deep-black text-center">
+      {/* Logo */}
+      <div className="mb-10">
+        <a
+          href="#top"
+          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          aria-label="חזרה לראש העמוד"
+          className="inline-block cursor-pointer"
+        >
+          <img
+            src="/photos/hila-logo.png"
+            alt="הילה צלמת"
+            className="mx-auto w-64 sm:w-80 opacity-90 hover:opacity-100 transition-opacity duration-300"
+            style={{ filter: 'brightness(0) invert(1)' }}
+            loading="lazy"
+          />
+        </a>
+      </div>
+
       {/* Social links */}
       <div className="flex justify-center gap-6 mb-8">
         <a
@@ -32,10 +50,7 @@ export default function Footer() {
 
       <div className="w-8 h-[1px] bg-warm-brown/30 mx-auto mb-6" />
 
-      <p className="font-serif text-lg text-off-white/70 font-light">
-        הילה | צלמת
-      </p>
-      <p className="text-xs text-off-white/25 mt-3">
+      <p className="text-xs text-cream/60 mt-1">
         כל הזכויות שמורות &copy; {new Date().getFullYear()}
       </p>
     </footer>
