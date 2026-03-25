@@ -76,13 +76,16 @@ export default function App() {
 
         {/* Parallax image break */}
         <div
-          className="parallax-section h-[50vh] md:h-[60vh] relative overflow-hidden"
-          style={{
-            backgroundImage: "url('/gallery/general/general-011.jpg')",
-          }}
+          className="h-[50vh] md:h-[60vh] relative overflow-hidden"
           role="presentation"
           aria-hidden="true"
         >
+          <img
+            src="/gallery/general/general-011.jpg"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
+            data-parallax="-0.08"
+          />
           <div className="absolute inset-0 bg-deep-black/40" />
 
           {/* Top: cinematic gradient fade from Services' dark bg */}
