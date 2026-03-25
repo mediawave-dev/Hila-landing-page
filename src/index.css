@@ -84,8 +84,13 @@ section[id] {
 .kenburns-2 { animation: kenburns-2 6s ease-out forwards; }
 .kenburns-3 { animation: kenburns-3 6s ease-out forwards; }
 
-/* Scroll parallax images — container must have overflow:hidden */
+/* Scroll parallax — container must have overflow:hidden */
 [data-parallax] {
+  will-change: transform;
+}
+
+/* Text parallax elements — no scale, smooth motion */
+[data-parallax-text] {
   will-change: transform;
 }
 

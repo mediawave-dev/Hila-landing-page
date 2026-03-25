@@ -99,8 +99,12 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/50 to-soft-black/25" />
       <div className="absolute inset-0 bg-gradient-to-b from-deep-black/40 via-transparent to-transparent" />
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6">
+      {/* Content — drifts up faster than background on scroll for separation effect */}
+      <div
+        className="relative z-10 text-center px-6"
+        data-parallax="0.35"
+        data-parallax-text
+      >
         <h1 className="font-serif text-7xl sm:text-8xl md:text-[10rem] font-light text-off-white leading-none">
           הילה
         </h1>

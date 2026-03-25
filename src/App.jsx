@@ -8,6 +8,7 @@ import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import SectionDivider from './components/SectionDivider'
+import ParallaxBreak from './components/ParallaxBreak'
 
 export default function App() {
   useEffect(() => {
@@ -50,7 +51,11 @@ export default function App() {
           if (rect.bottom > 0 && rect.top < vh) {
             const speed = parseFloat(el.dataset.parallax)
             const centerOffset = rect.top + rect.height / 2 - vh / 2
-            el.style.transform = `translateY(${centerOffset * speed}px) scale(1.1)`
+            // Text elements skip scale (scale is only for images to hide edges)
+            const noScale = el.hasAttribute('data-parallax-text')
+            el.style.transform = noScale
+              ? `translateY(${centerOffset * speed}px)`
+              : `translateY(${centerOffset * speed}px) scale(1.1)`
           }
         })
         ticking = false
@@ -76,7 +81,7 @@ export default function App() {
       <main>
         <Hero />
 
-        {/* Hero → About */}
+        {/* Hero → About: gradient fade */}
         <SectionDivider
           bg="var(--color-deep-black)"
           fill="var(--color-off-white)"
@@ -85,62 +90,59 @@ export default function App() {
 
         <About />
 
-        {/* About → Services (mirrored) */}
-        <SectionDivider
-          bg="var(--color-off-white)"
-          fill="var(--color-soft-black)"
-          accent="var(--color-warm-brown)"
-          mirror
-        />
+        {/* About → Services: parallax break with quote */}
+        <ParallaxBreak
+          image="/gallery/general/general-020.jpg"
+          topBlend="off-white"
+          bottomBlend="soft-black"
+          objectPosition="center 40%"
+        >
+          <p
+            className="font-serif text-2xl md:text-4xl lg:text-5xl text-off-white/90 font-light text-center leading-relaxed"
+            data-parallax="0.25"
+            data-parallax-text
+          >
+            כל רגע הוא סיפור
+          </p>
+        </ParallaxBreak>
 
         <Services />
 
-        {/* Parallax image break */}
-        <div
-          className="h-[50vh] md:h-[60vh] relative overflow-hidden"
-          role="presentation"
-          aria-hidden="true"
-        >
-          <img
-            src="/gallery/general/general-011.jpg"
-            alt=""
-            width={1920}
-            height={1280}
-            className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
-            data-parallax="-0.08"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-deep-black/40" />
-
-          {/* Top: cinematic gradient fade from Services' dark bg */}
-          <div className="absolute top-0 inset-x-0 h-24 md:h-36 bg-gradient-to-b from-soft-black to-transparent z-10" />
-
-          {/* Bottom: S-curve wave to Gallery */}
-          <div className="absolute bottom-0 inset-x-0 leading-[0] z-10" aria-hidden="true" style={{ transform: 'scaleX(-1)' }}>
-            <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="w-full block h-[40px] sm:h-[60px] md:h-[80px] lg:h-[100px]">
-              <path d="M0,60 C360,120 1080,0 1440,60 L1440,121 L0,121 Z" fill="var(--color-off-white)" />
-              <path d="M0,60 C360,120 1080,0 1440,60" fill="none" stroke="var(--color-warm-brown)" strokeWidth="2" vectorEffect="non-scaling-stroke" />
-            </svg>
-          </div>
-        </div>
+        {/* Services → Gallery: parallax break */}
+        <ParallaxBreak
+          image="/gallery/general/general-011.jpg"
+          topBlend="soft-black"
+          bottomBlend="off-white"
+          objectPosition="center 30%"
+        />
 
         <Gallery />
 
-        {/* Gallery → Testimonials */}
-        <SectionDivider
-          bg="var(--color-off-white)"
-          fill="var(--color-soft-black)"
-          accent="var(--color-warm-brown)"
-        />
+        {/* Gallery → Testimonials: parallax break with quote */}
+        <ParallaxBreak
+          image="/gallery/pregnancy/pregnancy-010.jpg"
+          topBlend="off-white"
+          bottomBlend="soft-black"
+          objectPosition="center 35%"
+        >
+          <p
+            className="font-serif text-2xl md:text-4xl lg:text-5xl text-off-white/90 font-light text-center leading-relaxed"
+            data-parallax="0.25"
+            data-parallax-text
+          >
+            זיכרונות שלא דוהים
+          </p>
+        </ParallaxBreak>
 
         <Testimonials />
 
-        {/* Testimonials → Contact (mirrored) */}
-        <SectionDivider
-          bg="var(--color-soft-black)"
-          fill="var(--color-cream)"
-          accent="var(--color-warm-brown)"
-          mirror
+        {/* Testimonials → Contact: parallax break */}
+        <ParallaxBreak
+          image="/gallery/general/general-014.jpg"
+          height="h-[40vh] md:h-[50vh]"
+          topBlend="soft-black"
+          bottomBlend="cream"
+          objectPosition="center 45%"
         />
 
         <Contact />
