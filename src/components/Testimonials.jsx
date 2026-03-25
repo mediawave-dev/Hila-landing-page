@@ -23,13 +23,13 @@ export default function Testimonials() {
         <h2 className="scroll-reveal font-serif text-4xl md:text-5xl font-light text-off-white text-center mb-4">
           מה אומרים עלי
         </h2>
-        <div className="scroll-reveal w-10 h-[1px] bg-warm-brown/50 mx-auto mb-16" />
+        <div className="scroll-reveal heading-ornament mx-auto mb-16"><span /></div>
 
         <div className="grid md:grid-cols-3 gap-8 md:gap-12">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="scroll-reveal text-center"
+              className="scroll-reveal testimonial-card text-center pt-8"
               style={{ transitionDelay: `${index * 0.15}s` }}
             >
               <span className="font-serif text-5xl text-warm-brown/40 leading-none block mb-4">

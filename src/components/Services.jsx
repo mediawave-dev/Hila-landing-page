@@ -2,22 +2,22 @@ const services = [
   {
     title: 'משפחה',
     description: 'צילומי משפחה טבעיים ומלאי חיים — כי כל משפחה היא סיפור ייחודי.',
-    image: 'https://images.unsplash.com/photo-1609220136736-443140cffec6?w=600&q=80',
+    image: '/gallery/family/family-009.jpg',
   },
   {
     title: 'זוגיות',
     description: 'לתפוס את הכימיה, את המבטים ואת הרגעים השקטים שביניכם.',
-    image: 'https://images.unsplash.com/photo-1529634597503-139d3726fed5?w=600&q=80',
+    image: '/gallery/general/general-026.jpg',
   },
   {
     title: 'הריון',
     description: 'תיעוד התקופה הקסומה הזו באור רך ובאווירה אינטימית.',
-    image: 'https://images.unsplash.com/photo-1544126592-807ade215a0b?w=600&q=80',
+    image: '/gallery/general/general-007.jpg',
   },
   {
     title: 'אירועים',
     description: 'מרגעי ההכנות ועד לריקוד האחרון — הכל נתפס בעדשה.',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80',
+    image: '/gallery/family/family-041.jpg',
   },
 ]
 
@@ -28,7 +28,7 @@ export default function Services() {
         <h2 className="scroll-reveal font-serif text-4xl md:text-5xl font-light text-off-white text-center mb-4">
           שירותים
         </h2>
-        <div className="scroll-reveal w-10 h-[1px] bg-warm-brown/50 mx-auto mb-16" />
+        <div className="scroll-reveal heading-ornament mx-auto mb-16"><span /></div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
@@ -37,7 +37,7 @@ export default function Services() {
               className="scroll-reveal group cursor-pointer"
               style={{ transitionDelay: `${index * 0.12}s` }}
             >
-              <div className="relative aspect-[3/4] overflow-hidden mb-5">
+              <div className="hover-frame relative aspect-[3/4] overflow-hidden mb-5">
                 <img
                   src={service.image}
                   alt={service.title}

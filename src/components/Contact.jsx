@@ -27,14 +27,14 @@ export default function Contact() {
         <h2 className="scroll-reveal font-serif text-4xl md:text-5xl font-light text-soft-black text-center mb-3">
           בואו נדבר
         </h2>
-        <div className="scroll-reveal w-10 h-[1px] bg-warm-brown/50 mx-auto mb-6" />
+        <div className="scroll-reveal heading-ornament mx-auto mb-6"><span /></div>
         <p className="scroll-reveal text-center text-taupe font-light mb-16 max-w-md mx-auto">
           רוצים לשמור רגע? ספרו לי קצת על מה שאתם מחפשים ואחזור אליכם בהקדם.
         </p>
 
         <div className="grid md:grid-cols-2 gap-12 md:gap-16">
           {/* Form */}
-          <form onSubmit={handleSubmit} className="scroll-reveal space-y-6">
+          <form onSubmit={handleSubmit} className="scroll-reveal form-accent space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm text-charcoal mb-2">
                 שם מלא

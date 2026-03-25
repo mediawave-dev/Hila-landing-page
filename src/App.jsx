@@ -7,6 +7,7 @@ import Gallery from './components/Gallery'
 import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import SectionDivider from './components/SectionDivider'
 
 export default function App() {
   useEffect(() => {
@@ -53,24 +54,76 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+
+        {/* Hero → About */}
+        <SectionDivider
+          bg="var(--color-deep-black)"
+          fill="var(--color-off-white)"
+          accent="var(--color-warm-brown)"
+        />
+
         <About />
+
+        {/* About → Services (mirrored) */}
+        <SectionDivider
+          bg="var(--color-off-white)"
+          fill="var(--color-soft-black)"
+          accent="var(--color-warm-brown)"
+          mirror
+        />
+
         <Services />
 
-        {/* Parallax divider */}
+        {/* Parallax image break */}
         <div
-          className="parallax-section h-[40vh] md:h-[50vh] relative"
+          className="parallax-section h-[50vh] md:h-[60vh] relative overflow-hidden"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=1600&q=80')",
+            backgroundImage: "url('/gallery/general/general-011.jpg')",
           }}
           role="presentation"
           aria-hidden="true"
         >
           <div className="absolute inset-0 bg-deep-black/40" />
+
+          {/* Top: cinematic gradient fade from Services' dark bg */}
+          <div className="absolute top-0 inset-x-0 h-24 md:h-36 bg-gradient-to-b from-soft-black to-transparent z-10" />
+
+          {/* Bottom: S-curve wave to Gallery */}
+          <div className="absolute bottom-0 inset-x-0 leading-[0] z-10" aria-hidden="true" style={{ transform: 'scaleX(-1)' }}>
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="w-full block h-[40px] sm:h-[60px] md:h-[80px] lg:h-[100px]">
+              <path d="M0,60 C360,120 1080,0 1440,60 L1440,121 L0,121 Z" fill="var(--color-off-white)" />
+              <path d="M0,60 C360,120 1080,0 1440,60" fill="none" stroke="var(--color-warm-brown)" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+            </svg>
+          </div>
         </div>
 
         <Gallery />
+
+        {/* Gallery → Testimonials */}
+        <SectionDivider
+          bg="var(--color-off-white)"
+          fill="var(--color-soft-black)"
+          accent="var(--color-warm-brown)"
+        />
+
         <Testimonials />
+
+        {/* Testimonials → Contact (mirrored) */}
+        <SectionDivider
+          bg="var(--color-soft-black)"
+          fill="var(--color-cream)"
+          accent="var(--color-warm-brown)"
+          mirror
+        />
+
         <Contact />
+
+        {/* Contact → Footer */}
+        <SectionDivider
+          bg="var(--color-cream)"
+          fill="var(--color-deep-black)"
+          accent="var(--color-warm-brown)"
+        />
       </main>
       <Footer />
     </>

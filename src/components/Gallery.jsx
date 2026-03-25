@@ -1,12 +1,12 @@
 const galleryImages = [
-  { src: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&q=80', alt: 'צילום משפחה', span: 'row-span-2' },
-  { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80', alt: 'צילום אירוע' },
-  { src: 'https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?w=600&q=80', alt: 'צילום זוגי' },
-  { src: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=600&q=80', alt: 'צילום הריון' },
-  { src: 'https://images.unsplash.com/photo-1537274942065-eda9d267a0fe?w=600&q=80', alt: 'צילום משפחה בחוץ', span: 'row-span-2' },
-  { src: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=600&q=80', alt: 'פורטרט' },
-  { src: 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=600&q=80', alt: 'צילום זוגי רומנטי' },
-  { src: 'https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?w=600&q=80', alt: 'צילום ילדים' },
+  { src: '/gallery/general/general-010.jpg', alt: 'צילום משפחה', span: 'row-span-2' },
+  { src: '/gallery/family/family-017.jpg', alt: 'אבא ובת' },
+  { src: '/gallery/pregnancy/pregnancy-025.jpg', alt: 'צילום זוגי בחוף' },
+  { src: '/gallery/pregnancy/pregnancy-001.jpg', alt: 'צילום הריון' },
+  { src: '/gallery/family/family-031.jpg', alt: 'צילום משפחה בטבע', span: 'row-span-2' },
+  { src: '/gallery/general/general-012.jpg', alt: 'צילום משפחתי' },
+  { src: '/gallery/pregnancy/pregnancy-015.jpg', alt: 'צללית הריון' },
+  { src: '/gallery/family/family-040.jpg', alt: 'ניובורן' },
 ]
 
 export default function Gallery() {
@@ -16,13 +16,13 @@ export default function Gallery() {
         <h2 className="scroll-reveal font-serif text-4xl md:text-5xl font-light text-soft-black text-center mb-4">
           גלריה
         </h2>
-        <div className="scroll-reveal w-10 h-[1px] bg-warm-brown/50 mx-auto mb-16" />
+        <div className="scroll-reveal heading-ornament mx-auto mb-16"><span /></div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3 auto-rows-[200px] md:auto-rows-[250px]">
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className={`scroll-reveal overflow-hidden group relative cursor-pointer ${image.span || ''}`}
+              className={`scroll-reveal hover-frame overflow-hidden group relative cursor-pointer ${image.span || ''}`}
               style={{ transitionDelay: `${(index % 4) * 0.1}s` }}
             >
               <img

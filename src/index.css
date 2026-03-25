@@ -102,6 +102,127 @@ section[id] {
   }
 }
 
+/* ── Decorative elements inspired by andrewheeleyweddings.com ── */
+
+/* Corner accent frame — L-shaped marks at diagonal corners */
+.corner-accent {
+  position: relative;
+}
+.corner-accent::before,
+.corner-accent::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+  z-index: 10;
+  transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+  opacity: 0.35;
+}
+.corner-accent::before {
+  top: -12px;
+  inset-inline-end: -12px;
+  border-block-start: 1px solid var(--color-warm-brown);
+  border-inline-end: 1px solid var(--color-warm-brown);
+}
+.corner-accent::after {
+  bottom: -12px;
+  inset-inline-start: -12px;
+  border-block-end: 1px solid var(--color-warm-brown);
+  border-inline-start: 1px solid var(--color-warm-brown);
+}
+.corner-accent:hover::before,
+.corner-accent:hover::after {
+  width: 70px;
+  height: 70px;
+  opacity: 0.6;
+}
+
+/* Inner hover frame — thin border inside image on hover */
+.hover-frame {
+  position: relative;
+}
+.hover-frame::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px solid var(--color-off-white);
+  opacity: 0;
+  transition: opacity 0.5s ease, inset 0.5s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+.hover-frame:hover::after {
+  opacity: 0.5;
+  inset: 14px;
+}
+
+/* Heading ornament — dot with extending lines */
+.heading-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.heading-ornament::before,
+.heading-ornament::after {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: var(--color-warm-brown);
+  opacity: 0.5;
+}
+.heading-ornament > span {
+  width: 5px;
+  height: 5px;
+  background: var(--color-warm-brown);
+  opacity: 0.5;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* Testimonial card with subtle side accent */
+.testimonial-card {
+  position: relative;
+}
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  inset-inline-start: 50%;
+  transform: translateX(50%);
+  width: 1px;
+  height: 30px;
+  background: var(--color-warm-brown);
+  opacity: 0.25;
+}
+
+/* Contact form accent — vertical line on inline-end side */
+.form-accent {
+  position: relative;
+}
+.form-accent::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  inset-inline-end: -24px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--color-warm-brown) 20%,
+    var(--color-warm-brown) 80%,
+    transparent
+  );
+  opacity: 0.2;
+}
+@media (max-width: 767px) {
+  .form-accent::after {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

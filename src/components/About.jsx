@@ -4,7 +4,7 @@ export default function About() {
       <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
         {/* Image */}
         <div className="scroll-reveal">
-          <div className="aspect-[3/4] overflow-hidden">
+          <div className="corner-accent aspect-[3/4] overflow-hidden">
             <img
               src="/photos/IMG_5502-web.jpg"
               alt="הילה - צלמת"
@@ -20,7 +20,7 @@ export default function About() {
           <h2 className="font-serif text-4xl md:text-5xl font-light text-soft-black mb-3">
             קצת עלי
           </h2>
-          <div className="w-10 h-[1px] bg-warm-brown/50 mb-8" />
+          <div className="heading-ornament mb-8"><span /></div>
           <div className="space-y-5 text-charcoal font-light leading-relaxed">
             <p>
               היי, אני הילה. אמא לשניים + כלבה ;), צלמת שפשוט מאוהבת בשעת הזהב וחובבת אפייה מושבעת.

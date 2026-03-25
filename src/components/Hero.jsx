@@ -2,20 +2,20 @@ import { useState, useEffect, useLayoutEffect, useCallback, useRef } from 'react
 
 const slides = [
   {
-    src: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1600&q=80',
+    src: '/gallery/general/general-001.jpg',
     alt: 'צילום משפחה',
   },
   {
-    src: 'https://images.unsplash.com/photo-1529634597503-139d3726fed5?w=1600&q=80',
-    alt: 'צילום זוגיות',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1544126592-807ade215a0b?w=1600&q=80',
+    src: '/gallery/pregnancy/pregnancy-016.jpg',
     alt: 'צילום הריון',
   },
   {
-    src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80',
-    alt: 'צילום אירועים',
+    src: '/gallery/family/family-020.jpg',
+    alt: 'צילום משפחה בטבע',
+  },
+  {
+    src: '/gallery/general/general-018.jpg',
+    alt: 'צילום זוגיות',
   },
 ]
 
