@@ -29,15 +29,27 @@ export default function App() {
   // Scroll parallax for images with data-parallax attribute
   useEffect(() => {
     let ticking = false
+    // Cache viewport height — only update on width change (real resize),
+    // NOT on mobile address-bar show/hide which changes height and causes jumps
+    let vh = window.innerHeight
+    let lastWidth = window.innerWidth
+    const onResize = () => {
+      if (window.innerWidth !== lastWidth) {
+        vh = window.innerHeight
+        lastWidth = window.innerWidth
+      }
+    }
+    window.addEventListener('resize', onResize)
+
     const handleScroll = () => {
       if (ticking) return
       ticking = true
       requestAnimationFrame(() => {
         document.querySelectorAll('[data-parallax]').forEach(el => {
           const rect = el.getBoundingClientRect()
-          if (rect.bottom > 0 && rect.top < window.innerHeight) {
+          if (rect.bottom > 0 && rect.top < vh) {
             const speed = parseFloat(el.dataset.parallax)
-            const centerOffset = rect.top + rect.height / 2 - window.innerHeight / 2
+            const centerOffset = rect.top + rect.height / 2 - vh / 2
             el.style.transform = `translateY(${centerOffset * speed}px) scale(1.1)`
           }
         })
@@ -46,7 +58,10 @@ export default function App() {
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', onResize)
+    }
   }, [])
 
   return (

@@ -70,7 +70,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-[100dvh] flex items-center justify-center overflow-hidden touch-pan-y"
+      className="relative h-[100svh] flex items-center justify-center overflow-hidden touch-pan-y"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
