@@ -12,22 +12,27 @@ export default function ParallaxBreak({
   topBlend,
   bottomBlend,
   objectPosition = 'center',
+  natural = false,
   children,
 }) {
   return (
     <div
-      className={`relative overflow-hidden ${height}`}
+      className={`relative overflow-hidden ${natural ? '' : height}`}
       role={children ? undefined : 'presentation'}
       aria-hidden={children ? undefined : 'true'}
     >
-      {/* Parallax image — moves slower than scroll */}
+      {/* Parallax image */}
       <img
         src={image}
         alt=""
         width={1920}
         height={1280}
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ objectPosition }}
+        className={
+          natural
+            ? 'w-full h-auto block'
+            : 'absolute inset-0 w-full h-full object-cover'
+        }
+        style={natural ? {} : { objectPosition }}
         data-parallax={speed}
         loading="lazy"
       />

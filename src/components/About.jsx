@@ -2,9 +2,15 @@ export default function About() {
   return (
     <section id="about" className="py-24 md:py-32 bg-off-white">
       <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-        {/* Image — full-bleed on mobile */}
-        <div className="scroll-reveal -mx-6 md:mx-0">
-          <div className="corner-accent aspect-[3/4] overflow-hidden">
+        {/* Image — oval portrait frame */}
+        <div className="scroll-reveal flex justify-center">
+          <div
+            className="w-[320px] h-[420px] md:w-[440px] md:h-[560px] overflow-hidden"
+            style={{
+              borderRadius: '50%',
+              boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
+            }}
+          >
             <img
               src="/photos/IMG_5502-web.jpg"
               alt="הילה - צלמת"
@@ -12,7 +18,6 @@ export default function About() {
               height={1067}
               className="w-full h-full object-cover"
               style={{ objectPosition: 'center 20%' }}
-              data-parallax="-0.08"
               loading="lazy"
             />
           </div>

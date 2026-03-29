@@ -35,7 +35,7 @@ export default function Footer() {
           </svg>
         </a>
         <a
-          href="https://wa.me/message/N4I2BDIEKGBYF1"
+          href={`https://wa.me/972529571799?text=${`${encodeURIComponent('היי הילה')}%20%F0%9F%99%82%0A${encodeURIComponent('אשמח לשמוע פרטים על צילום')}%20%F0%9F%93%B8`}`}
           target="_blank"
           rel="noopener noreferrer"
           className="text-off-white/40 hover:text-warm-brown transition-colors duration-300"
@@ -52,6 +52,18 @@ export default function Footer() {
 
       <p className="text-xs text-cream/60 mt-1">
         כל הזכויות שמורות &copy; {new Date().getFullYear()}
+      </p>
+
+      <p className="mt-6 text-off-white/30" style={{ fontSize: '12px' }}>
+        האתר נבנה ע״י{' '}
+        <a
+          href="https://mediawave.co.il/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-off-white/50 transition-colors duration-300"
+        >
+          MediaWave
+        </a>
       </p>
     </footer>
   )

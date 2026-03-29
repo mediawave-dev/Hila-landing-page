@@ -16,7 +16,7 @@ export default function Contact() {
     e.preventDefault()
     const whatsappMessage = `היי הילה! 👋\nשם: ${formData.name}\nטלפון: ${formData.phone}\nשירות: ${formData.service}\nהודעה: ${formData.message}`
     window.open(
-      `https://wa.me/message/N4I2BDIEKGBYF1?text=${encodeURIComponent(whatsappMessage)}`,
+      `https://wa.me/972529571799?text=${encodeURIComponent(whatsappMessage)}`,
       '_blank'
     )
   }
@@ -103,7 +103,7 @@ export default function Contact() {
               type="submit"
               className="w-full bg-soft-black text-off-white py-4 font-light text-sm hover:bg-warm-brown transition-colors duration-500"
             >
-              שליחה בוואטסאפ
+              שליחה ב-WhatsApp
             </button>
           </form>
 
@@ -118,7 +118,7 @@ export default function Contact() {
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/message/N4I2BDIEKGBYF1"
+              href={`https://wa.me/972529571799?text=${`${encodeURIComponent('היי הילה')}%20%F0%9F%99%82%0A${encodeURIComponent('אשמח לשמוע פרטים על צילום')}%20%F0%9F%93%B8`}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 group"
@@ -130,7 +130,7 @@ export default function Contact() {
                 </svg>
               </div>
               <span className="text-charcoal font-light group-hover:text-warm-brown transition-colors duration-300">
-                וואטסאפ
+                WhatsApp
               </span>
             </a>
 

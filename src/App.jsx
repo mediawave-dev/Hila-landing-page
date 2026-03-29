@@ -116,10 +116,11 @@ export default function App() {
 
         {/* Services → Gallery: parallax break */}
         <ParallaxBreak
-          image="/gallery/general/general-011.jpg"
+          image="/gallery/general/3U2A4714_websize.jpg"
+          height="h-[70vh] md:h-[85vh]"
           topBlend="soft-black"
           bottomBlend="off-white"
-          objectPosition="center 25%"
+          objectPosition="center top"
         />
 
         <Gallery />
@@ -142,14 +143,25 @@ export default function App() {
 
         <Testimonials />
 
-        {/* Testimonials → Contact: parallax break */}
-        <ParallaxBreak
-          image="/gallery/general/general-014.jpg"
-          height="h-[60vh] md:h-[80vh]"
-          topBlend="soft-black"
-          bottomBlend="cream"
-          objectPosition="center 25%"
-        />
+        {/* Testimonials → Contact: full-width image */}
+        <div className="relative">
+          <img
+            src="/gallery/general/3U2A4667_websize.jpg"
+            alt="משפחה בשקיעה"
+            className="w-full h-auto block"
+            loading="lazy"
+          />
+          {/* Subtle top blend */}
+          <div
+            className="absolute top-0 inset-x-0 h-16 md:h-24"
+            style={{ background: 'linear-gradient(to bottom, var(--color-soft-black), transparent)' }}
+          />
+          {/* Subtle bottom blend */}
+          <div
+            className="absolute bottom-0 inset-x-0 h-16 md:h-24"
+            style={{ background: 'linear-gradient(to top, var(--color-cream), transparent)' }}
+          />
+        </div>
 
         <Contact />
 

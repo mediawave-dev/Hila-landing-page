@@ -7,6 +7,8 @@ const galleryImages = [
   { src: '/gallery/general/general-012.jpg', alt: 'צילום משפחתי' },
   { src: '/gallery/pregnancy/pregnancy-015.jpg', alt: 'צללית הריון', objectPosition: 'center 35%' },
   { src: '/gallery/family/family-040.jpg', alt: 'ניובורן' },
+  { src: '/gallery/general/3U2A5843_websize.jpg', alt: 'ניובורן ישן' },
+  { src: '/gallery/general/IMG_7750_websize_websize.jpg', alt: 'צילום זוגי בחוף' },
 ]
 
 export default function Gallery() {
