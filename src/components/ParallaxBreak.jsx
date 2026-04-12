@@ -38,7 +38,7 @@ export default function ParallaxBreak({
       />
 
       {/* Mood overlay */}
-      <div className="absolute inset-0 bg-deep-black/35" />
+      <div className="absolute inset-0 bg-light-caramel/30" />
 
       {/* Top gradient blend into section above */}
       {topBlend && (

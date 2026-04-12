@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="py-16 bg-deep-black text-center">
+    <footer className="py-16 bg-dusty-rose text-center">
       {/* Logo */}
       <div className="mb-10">
         <a
@@ -13,7 +13,7 @@ export default function Footer() {
             src="/photos/hila-logo.png"
             alt="הילה צלמת"
             className="mx-auto w-64 sm:w-80 opacity-90 hover:opacity-100 transition-opacity duration-300"
-            style={{ filter: 'brightness(0) invert(1)' }}
+            style={{ filter: 'brightness(0)' }}
             loading="lazy"
           />
         </a>
@@ -25,7 +25,7 @@ export default function Footer() {
           href="https://www.instagram.com/hila.photo.art"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-off-white/40 hover:text-warm-brown transition-colors duration-300"
+          className="text-charcoal/40 hover:text-warm-brown transition-colors duration-300"
           aria-label="אינסטגרם"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -38,7 +38,7 @@ export default function Footer() {
           href={`https://wa.me/972529571799?text=${`${encodeURIComponent('היי הילה')}%20%F0%9F%99%82%0A${encodeURIComponent('אשמח לשמוע פרטים על צילום')}%20%F0%9F%93%B8`}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-off-white/40 hover:text-warm-brown transition-colors duration-300"
+          className="text-charcoal/40 hover:text-warm-brown transition-colors duration-300"
           aria-label="וואטסאפ"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -50,17 +50,17 @@ export default function Footer() {
 
       <div className="w-8 h-[1px] bg-warm-brown/30 mx-auto mb-6" />
 
-      <p className="text-xs text-cream/60 mt-1">
+      <p className="text-xs text-charcoal/50 mt-1">
         כל הזכויות שמורות &copy; {new Date().getFullYear()}
       </p>
 
-      <p className="mt-6 text-off-white/30" style={{ fontSize: '12px' }}>
+      <p className="mt-6 text-taupe/50" style={{ fontSize: '12px' }}>
         האתר נבנה ע״י{' '}
         <a
           href="https://mediawave.co.il/"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-off-white/50 transition-colors duration-300"
+          className="hover:text-warm-brown transition-colors duration-300"
         >
           MediaWave
         </a>

@@ -95,9 +95,9 @@ export default function Hero() {
         </div>
       ))}
 
-      {/* Cinematic gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/50 to-soft-black/25" />
-      <div className="absolute inset-0 bg-gradient-to-b from-deep-black/40 via-transparent to-transparent" />
+      {/* Warm tinted overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-light-caramel/70 via-warm-tan/25 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-light-caramel/35 via-transparent to-transparent" />
 
       {/* Content — drifts up faster than background on scroll for separation effect */}
       <div
@@ -105,11 +105,11 @@ export default function Hero() {
         data-parallax="0.35"
         data-parallax-text
       >
-        <h1 className="font-serif text-7xl sm:text-8xl md:text-[10rem] font-light text-off-white leading-none">
+        <h1 className="font-serif text-7xl sm:text-8xl md:text-[10rem] font-light text-charcoal leading-none">
           הילה
         </h1>
         <div className="w-12 h-[1px] bg-warm-brown/60 mx-auto my-6 md:my-8" />
-        <p className="font-serif text-lg md:text-2xl font-light text-off-white/70">
+        <p className="font-serif text-lg md:text-2xl font-light text-charcoal/70">
           רגעים שנשארים לנצח
         </p>
       </div>
@@ -124,7 +124,7 @@ export default function Hero() {
             aria-label={`שקופית ${i + 1}`}
           >
             <span className={`block h-[2px] rounded-full transition-all duration-500 ${
-              i === current ? 'w-10 bg-off-white' : 'w-4 bg-off-white/30 group-hover:bg-off-white/50'
+              i === current ? 'w-10 bg-charcoal' : 'w-4 bg-charcoal/30 group-hover:bg-charcoal/50'
             }`} />
           </button>
         ))}

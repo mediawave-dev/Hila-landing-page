@@ -54,7 +54,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 inset-inline-start-0 inset-inline-end-0 w-full z-50 transition-all duration-500 pt-[env(safe-area-inset-top)] ${
         scrolled
-          ? 'bg-deep-black/90 backdrop-blur-md shadow-lg shadow-black/30'
+          ? 'bg-dusty-rose/90 backdrop-blur-md shadow-lg shadow-warm-tan/30'
           : 'bg-transparent'
       }`}
     >
@@ -69,7 +69,7 @@ export default function Navbar() {
             src="/photos/hila-logo.png"
             alt="הילה"
             className={`h-auto transition-all duration-500 ${scrolled ? 'w-[160px]' : 'w-[260px]'}`}
-            style={{ filter: 'brightness(0) invert(1)' }}
+            style={{ filter: 'brightness(0)' }}
           />
         </a>
 
@@ -78,7 +78,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="relative text-sm font-light text-off-white/75 hover:text-off-white transition-colors duration-300 after:absolute after:bottom-[-4px] after:inset-inline-end-0 after:w-0 after:h-[1px] after:bg-warm-brown after:transition-all after:duration-300 hover:after:w-full"
+                className="relative text-sm font-light text-charcoal/75 hover:text-charcoal transition-colors duration-300 after:absolute after:bottom-[-4px] after:inset-inline-end-0 after:w-0 after:h-[1px] after:bg-warm-brown after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -92,7 +92,7 @@ export default function Navbar() {
         <button
           ref={toggleRef}
           onClick={() => setIsOpen(!isOpen)}
-          className="relative p-2 text-off-white z-[60]"
+          className="relative p-2 z-[60] text-charcoal"
           aria-label={isOpen ? 'סגור תפריט' : 'פתח תפריט'}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
@@ -111,7 +111,7 @@ export default function Navbar() {
             src="/photos/hila-logo.png"
             alt="הילה"
             className="w-[180px] h-auto"
-            style={{ filter: 'brightness(0) invert(1)' }}
+            style={{ filter: 'brightness(0)' }}
           />
         </a>
       </div>
@@ -124,7 +124,7 @@ export default function Navbar() {
         aria-modal="true"
         aria-label="תפריט ניווט"
         onKeyDown={handleMenuKeyDown}
-        className={`md:hidden fixed inset-0 bg-deep-black/98 backdrop-blur-xl flex items-center justify-center transition-all duration-500 overscroll-none ${
+        className={`md:hidden fixed inset-0 bg-dusty-rose/98 backdrop-blur-xl flex items-center justify-center transition-all duration-500 overscroll-none ${
           isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
       >
@@ -142,7 +142,7 @@ export default function Navbar() {
               <a
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="font-serif text-2xl font-light text-off-white/85 hover:text-warm-brown transition-colors duration-300"
+                className="font-serif text-2xl font-light text-charcoal/85 hover:text-warm-brown transition-colors duration-300"
               >
                 {link.label}
               </a>

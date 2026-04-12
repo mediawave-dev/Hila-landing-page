@@ -26,9 +26,9 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 md:py-32 bg-soft-black">
+    <section id="services" className="py-24 md:py-32 bg-dusty-rose">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="scroll-reveal font-serif text-4xl md:text-5xl font-light text-off-white text-center mb-4">
+        <h2 className="scroll-reveal font-serif text-4xl md:text-5xl font-light text-charcoal text-center mb-4">
           שירותים
         </h2>
         <div className="scroll-reveal heading-ornament mx-auto mb-16"><span /></div>
@@ -51,12 +51,12 @@ export default function Services() {
                   data-parallax="-0.06"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-deep-black/20 group-hover:bg-deep-black/5 transition-all duration-500" />
+                <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-all duration-500" />
               </div>
-              <h3 className="font-serif text-2xl font-light text-off-white/90 mb-2">
+              <h3 className="font-serif text-2xl font-light text-charcoal mb-2">
                 {service.title}
               </h3>
-              <p className="text-sm font-light text-off-white/45 leading-relaxed">
+              <p className="text-sm font-light text-taupe leading-relaxed">
                 {service.description}
               </p>
             </div>

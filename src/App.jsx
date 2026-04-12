@@ -89,7 +89,7 @@ export default function App() {
 
         {/* Hero → About: gradient fade */}
         <SectionDivider
-          bg="var(--color-deep-black)"
+          bg="var(--color-light-caramel)"
           fill="var(--color-off-white)"
           accent="var(--color-warm-brown)"
         />
@@ -100,7 +100,7 @@ export default function App() {
         <ParallaxBreak
           image="/gallery/general/general-020.jpg"
           topBlend="off-white"
-          bottomBlend="soft-black"
+          bottomBlend="dusty-rose"
           objectPosition="center 20%"
         >
           <p
@@ -118,7 +118,7 @@ export default function App() {
         <ParallaxBreak
           image="/gallery/general/3U2A4714_websize.jpg"
           height="h-[70vh] md:h-[85vh]"
-          topBlend="soft-black"
+          topBlend="dusty-rose"
           bottomBlend="off-white"
           objectPosition="center top"
         />
@@ -129,7 +129,7 @@ export default function App() {
         <ParallaxBreak
           image="/gallery/pregnancy/pregnancy-010.jpg"
           topBlend="off-white"
-          bottomBlend="soft-black"
+          bottomBlend="warm-tan"
           objectPosition="center 30%"
         >
           <p
@@ -154,7 +154,7 @@ export default function App() {
           {/* Subtle top blend */}
           <div
             className="absolute top-0 inset-x-0 h-16 md:h-24"
-            style={{ background: 'linear-gradient(to bottom, var(--color-soft-black), transparent)' }}
+            style={{ background: 'linear-gradient(to bottom, var(--color-warm-tan), transparent)' }}
           />
           {/* Subtle bottom blend */}
           <div
@@ -168,7 +168,7 @@ export default function App() {
         {/* Contact → Footer */}
         <SectionDivider
           bg="var(--color-cream)"
-          fill="var(--color-deep-black)"
+          fill="var(--color-dusty-rose)"
           accent="var(--color-warm-brown)"
         />
       </main>
