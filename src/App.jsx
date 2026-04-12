@@ -104,7 +104,7 @@ export default function App() {
           objectPosition="center 20%"
         >
           <p
-            className="font-serif text-2xl md:text-4xl lg:text-5xl text-off-white/90 font-light text-center leading-relaxed"
+            className="font-serif text-2xl md:text-4xl lg:text-5xl text-charcoal font-light text-center leading-relaxed drop-shadow-sm"
             data-parallax="0.25"
             data-parallax-text
           >
@@ -133,7 +133,7 @@ export default function App() {
           objectPosition="center 30%"
         >
           <p
-            className="font-serif text-2xl md:text-4xl lg:text-5xl text-off-white/90 font-light text-center leading-relaxed"
+            className="font-serif text-2xl md:text-4xl lg:text-5xl text-charcoal font-light text-center leading-relaxed drop-shadow-sm"
             data-parallax="0.25"
             data-parallax-text
           >

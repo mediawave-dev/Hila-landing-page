@@ -25,7 +25,7 @@ export default function Footer() {
           href="https://www.instagram.com/hila.photo.art"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-charcoal/40 hover:text-warm-brown transition-colors duration-300"
+          className="text-charcoal/60 hover:text-warm-brown transition-colors duration-300"
           aria-label="אינסטגרם"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -38,7 +38,7 @@ export default function Footer() {
           href={`https://wa.me/972529571799?text=${`${encodeURIComponent('היי הילה')}%20%F0%9F%99%82%0A${encodeURIComponent('אשמח לשמוע פרטים על צילום')}%20%F0%9F%93%B8`}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-charcoal/40 hover:text-warm-brown transition-colors duration-300"
+          className="text-charcoal/60 hover:text-warm-brown transition-colors duration-300"
           aria-label="וואטסאפ"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -50,11 +50,11 @@ export default function Footer() {
 
       <div className="w-8 h-[1px] bg-warm-brown/30 mx-auto mb-6" />
 
-      <p className="text-xs text-charcoal/50 mt-1">
+      <p className="text-xs text-charcoal/70 mt-1">
         כל הזכויות שמורות &copy; {new Date().getFullYear()}
       </p>
 
-      <p className="mt-6 text-taupe/50" style={{ fontSize: '12px' }}>
+      <p className="mt-6 text-charcoal/50" style={{ fontSize: '12px' }}>
         האתר נבנה ע״י{' '}
         <a
           href="https://mediawave.co.il/"

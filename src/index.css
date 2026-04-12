@@ -12,9 +12,9 @@
   --color-deep-black: oklch(0.10 0.005 50);
   --color-warm-dark: oklch(0.28 0.04 55);
   --color-warm-mid: oklch(0.52 0.06 58);
-  --color-warm-tan: oklch(0.76 0.055 62);
-  --color-light-caramel: oklch(0.70 0.065 58);
-  --color-dusty-rose: oklch(0.82 0.04 55);
+  --color-warm-tan: oklch(0.82 0.045 62);
+  --color-light-caramel: oklch(0.78 0.05 58);
+  --color-dusty-rose: oklch(0.88 0.03 55);
   --color-warm-gray: oklch(0.40 0.02 55);
   --font-serif: "Frank Ruhl Libre", serif;
   --font-sans: "Heebo", sans-serif;
