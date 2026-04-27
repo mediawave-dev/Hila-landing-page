@@ -18,6 +18,8 @@
   --color-warm-gray: oklch(0.40 0.02 55);
   --color-whatsapp: oklch(0.82 0.12 155);
   --color-whatsapp-hover: oklch(0.74 0.14 155);
+  --color-phone: oklch(0.80 0.08 230);
+  --color-phone-hover: oklch(0.72 0.10 230);
   --font-serif: "Frank Ruhl Libre", serif;
   --font-sans: "Heebo", sans-serif;
 }
