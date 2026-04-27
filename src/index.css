@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: oklch(0.96 0.01 80);
-  --color-cream-dark: oklch(0.92 0.015 75);
-  --color-sand: oklch(0.88 0.025 70);
+  --color-cream: oklch(1 0 0);
+  --color-cream-dark: oklch(0.94 0.003 80);
+  --color-sand: oklch(0.90 0.005 75);
   --color-taupe: oklch(0.65 0.03 60);
   --color-warm-brown: oklch(0.45 0.04 55);
   --color-charcoal: oklch(0.25 0.02 50);
   --color-soft-black: oklch(0.18 0.01 50);
-  --color-off-white: oklch(0.99 0.005 90);
+  --color-off-white: oklch(1 0 0);
   --color-deep-black: oklch(0.10 0.005 50);
   --color-warm-dark: oklch(0.28 0.04 55);
   --color-warm-mid: oklch(0.52 0.06 58);
-  --color-warm-tan: oklch(0.82 0.045 62);
+  --color-warm-tan: oklch(0.97 0.003 80);
   --color-light-caramel: oklch(0.78 0.05 58);
-  --color-dusty-rose: oklch(0.88 0.03 55);
+  --color-dusty-rose: oklch(0.97 0.003 80);
   --color-warm-gray: oklch(0.40 0.02 55);
   --font-serif: "Frank Ruhl Libre", serif;
   --font-sans: "Heebo", sans-serif;
