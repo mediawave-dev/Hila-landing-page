@@ -246,6 +246,38 @@ section[id] {
   display: none;
 }
 
+/* ── Testimonials carousel cue (mobile only) ──
+   Two layered cues:
+   1. Symmetric edge mask softens the rail's left+right edges so the carousel
+      visually "breathes" into the section bg — implies content beyond the frame.
+   2. One-shot glide animation triggered by IntersectionObserver: the rail
+      drifts ~28px toward the LTR-end (visually left in RTL), pauses, settles.
+      Communicates direction without text or chevrons. Disabled on desktop
+      (where the rail becomes a static 4-col grid) and on reduced-motion. */
+@media (max-width: 767px) {
+  .testimonials-rail {
+    -webkit-mask-image: linear-gradient(to left, transparent 0, black 22px, black calc(100% - 22px), transparent 100%);
+            mask-image: linear-gradient(to left, transparent 0, black 22px, black calc(100% - 22px), transparent 100%);
+  }
+
+  @keyframes carousel-glide-cue {
+    0%   { transform: translateX(0); }
+    32%  { transform: translateX(-28px); }
+    62%  { transform: translateX(-28px); }
+    100% { transform: translateX(0); }
+  }
+
+  .testimonials-rail.carousel-cued {
+    animation: carousel-glide-cue 1.6s cubic-bezier(0.32, 0.72, 0.32, 1) 0.35s 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-rail.carousel-cued {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

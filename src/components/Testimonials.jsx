@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react'
+
 const testimonials = [
   {
     name: 'מיכל ואלון',
@@ -17,6 +19,27 @@ const testimonials = [
 ]
 
 export default function Testimonials() {
+  const railRef = useRef(null)
+
+  useEffect(() => {
+    const inner = railRef.current
+    if (!inner) return
+    if (window.matchMedia('(min-width: 768px)').matches) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          inner.classList.add('carousel-cued')
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.35 }
+    )
+    observer.observe(inner)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section id="testimonials" className="py-24 md:py-32 bg-warm-tan">
       <div className="max-w-5xl mx-auto px-6">
@@ -58,7 +81,7 @@ export default function Testimonials() {
             מה כותבים לי אחרי הצילומים
           </p>
 
-          <div className="flex gap-4 md:gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-4 md:overflow-visible md:pb-0 md:items-start">
+          <div ref={railRef} className="testimonials-rail flex gap-4 md:gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-4 md:overflow-visible md:pb-0 md:items-start">
             {[
               { src: '/whatsapp-recommend/wa-recommend-3.jpeg', alt: 'המלצה מלקוחה על התמונות' },
               { src: '/photos/ביקורות/WhatsApp Image 2026-04-07 at 12.24.46.jpeg', alt: 'המלצה על חוויה נעימה ותוצאות מהממות' },
