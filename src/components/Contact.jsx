@@ -146,7 +146,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="flex items-center gap-4 group"
             >
-              <div className="w-12 h-12 rounded-full flex items-center justify-center transition-opacity duration-300 group-hover:opacity-85" style={{ background: 'linear-gradient(45deg, #feda75 0%, #fa7e1e 25%, #d62976 50%, #962fbf 75%, #4f5bd5 100%)' }}>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center transition-opacity duration-300 group-hover:opacity-85" style={{ background: 'linear-gradient(45deg, #ffe8a8 0%, #fcb27a 25%, #f0a6c0 50%, #c8a8db 75%, #a8aee0 100%)' }}>
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-off-white">
                   <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.8"/>
                   <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="1.8"/>

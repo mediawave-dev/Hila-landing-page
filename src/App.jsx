@@ -88,13 +88,6 @@ export default function App() {
       <main>
         <Hero />
 
-        {/* Hero → About: gradient fade */}
-        <SectionDivider
-          bg="var(--color-light-caramel)"
-          fill="var(--color-off-white)"
-          accent="var(--color-warm-brown)"
-        />
-
         <About />
 
         {/* About → Services: parallax break with quote */}

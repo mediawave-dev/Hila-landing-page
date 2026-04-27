@@ -31,11 +31,11 @@ export default function Footer() {
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
             <defs>
               <linearGradient id="instaGradFooter" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#feda75" />
-                <stop offset="25%" stopColor="#fa7e1e" />
-                <stop offset="50%" stopColor="#d62976" />
-                <stop offset="75%" stopColor="#962fbf" />
-                <stop offset="100%" stopColor="#4f5bd5" />
+                <stop offset="0%" stopColor="#ffe8a8" />
+                <stop offset="25%" stopColor="#fcb27a" />
+                <stop offset="50%" stopColor="#f0a6c0" />
+                <stop offset="75%" stopColor="#c8a8db" />
+                <stop offset="100%" stopColor="#a8aee0" />
               </linearGradient>
             </defs>
             <rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#instaGradFooter)" strokeWidth="1.8"/>
