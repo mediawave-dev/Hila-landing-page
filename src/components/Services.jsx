@@ -21,7 +21,10 @@ const services = [
   },
   {
     title: 'צילומי ברית / ה',
-    image: '/gallery/brit/brit-002.jpg',
+    image: '/gallery/family/family-041.jpg',
+    objectPosition: 'center 35%',
+    imageInset: '/gallery/family/family-040.jpg',
+    insetAlt: 'יד תינוק אוחזת אצבע של מבוגר',
     paragraphs: [
       'הרגעים הראשונים האלה עוברים כל כך מהר.',
       'צילומי ברית/ה הם לא רק תיעוד של האירוע, אלא של כל מה שמסביב — ההתרגשות, המשפחה, החיבוקים והאהבה.',
@@ -70,20 +73,45 @@ export default function Services() {
                 className="grid md:grid-cols-2 gap-10 md:gap-16 items-center"
               >
                 <div
-                  className={`scroll-reveal hover-frame relative aspect-[4/5] overflow-hidden -mx-6 md:mx-0 ${
+                  className={`scroll-reveal relative -mx-6 md:mx-0 ${
                     flipped ? 'md:order-2' : ''
                   }`}
                 >
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    width={800}
-                    height={1000}
-                    className="w-full h-full object-cover"
-                    style={service.objectPosition ? { objectPosition: service.objectPosition } : undefined}
-                    data-parallax="-0.05"
-                    loading="lazy"
-                  />
+                  <div className="hover-frame relative aspect-[4/5] overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      width={800}
+                      height={1000}
+                      className="w-full h-full object-cover"
+                      style={{
+                        ...(service.objectPosition && { objectPosition: service.objectPosition }),
+                        imageRendering: 'high-quality',
+                      }}
+                      data-parallax="-0.05"
+                      loading="lazy"
+                    />
+                  </div>
+                  {service.imageInset && (
+                    <div
+                      className="service-inset absolute z-20 w-[58%] md:w-[50%] aspect-[4/3] bg-off-white p-2 md:p-3 shadow-2xl"
+                      style={{
+                        bottom: '-1rem',
+                        insetInlineEnd: '-1.25rem',
+                      }}
+                    >
+                      <div className="w-full h-full overflow-hidden">
+                        <img
+                          src={service.imageInset}
+                          alt={service.insetAlt || ''}
+                          className="w-full h-full object-cover"
+                          style={{ imageRendering: 'high-quality' }}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <div

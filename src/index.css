@@ -237,6 +237,32 @@ section[id] {
   }
 }
 
+/* ── Editorial diptych inset (Services) ──
+   The secondary image floats over the primary's bottom-end corner like a
+   print pinned to a magazine spread. Initial state: small + tilted further
+   off-axis + transparent. When the parent .scroll-reveal is revealed, the
+   inset settles into its final tilt with a delayed, cinematic ease. */
+.service-inset {
+  opacity: 0;
+  transform: rotate(-9deg) scale(0.92) translateY(18px);
+  transform-origin: 50% 90%;
+  transition:
+    opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.35s,
+    transform 1.15s cubic-bezier(0.32, 0.72, 0.32, 1) 0.35s;
+  will-change: transform, opacity;
+}
+.scroll-reveal.revealed .service-inset {
+  opacity: 1;
+  transform: rotate(-2.5deg) scale(1) translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-inset {
+    opacity: 1;
+    transform: rotate(-2.5deg);
+    transition: none;
+  }
+}
+
 /* Hide scrollbar for horizontal carousels */
 .scrollbar-hide {
   -ms-overflow-style: none;
