@@ -32,13 +32,14 @@ export default function ParallaxBreak({
             ? 'w-full h-auto block'
             : 'absolute inset-0 w-full h-full object-cover'
         }
-        style={natural ? {} : { objectPosition }}
+        style={natural ? { imageRendering: 'high-quality' } : { objectPosition, imageRendering: 'high-quality' }}
         data-parallax={speed}
         loading="lazy"
+        decoding="async"
       />
 
-      {/* Mood overlay */}
-      <div className="absolute inset-0 bg-light-caramel/30" />
+      {/* Mood overlay — subtle darkening so white text reads on any photo content */}
+      <div className="absolute inset-0 bg-deep-black/30" />
 
       {/* Top gradient blend into section above */}
       {topBlend && (

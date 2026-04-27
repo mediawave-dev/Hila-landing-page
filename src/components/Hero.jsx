@@ -107,7 +107,7 @@ export default function Hero() {
           הילה
         </h1>
         <div className="w-10 h-[1px] bg-off-white/55 my-4 md:my-5" />
-        <p className="font-serif text-xs md:text-sm text-off-white/90 font-light">
+        <p className="font-serif text-sm md:text-base text-off-white font-light leading-snug">
           רגעים שנשארים לנצח
         </p>
       </div>

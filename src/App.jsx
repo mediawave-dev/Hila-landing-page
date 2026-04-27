@@ -58,10 +58,11 @@ export default function App() {
             if (noScale) {
               el.style.transform = `translateY(${translation}px)`
             } else {
-              // Cap translation to stay within the scale buffer (10% of container)
-              const maxShift = rect.height * 0.1
+              // Smaller scale buffer (4%) — keeps source pixels sharper while
+              // still hiding edge during parallax shift
+              const maxShift = rect.height * 0.04
               const capped = Math.max(-maxShift, Math.min(maxShift, translation))
-              el.style.transform = `translateY(${capped}px) scale(1.2)`
+              el.style.transform = `translateY(${capped}px) scale(1.08)`
             }
           }
         })
@@ -98,7 +99,8 @@ export default function App() {
           objectPosition="center 20%"
         >
           <p
-            className="font-serif text-2xl md:text-4xl lg:text-5xl text-charcoal font-light text-center leading-relaxed drop-shadow-sm"
+            className="font-serif text-2xl md:text-4xl lg:text-5xl text-off-white font-light text-center leading-relaxed"
+            style={{ textShadow: '0 2px 16px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.4)' }}
             data-parallax="0.25"
             data-parallax-text
           >
@@ -127,7 +129,8 @@ export default function App() {
           objectPosition="center 30%"
         >
           <p
-            className="font-serif text-2xl md:text-4xl lg:text-5xl text-charcoal font-light text-center leading-relaxed drop-shadow-sm"
+            className="font-serif text-2xl md:text-4xl lg:text-5xl text-off-white font-light text-center leading-relaxed"
+            style={{ textShadow: '0 2px 16px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.4)' }}
             data-parallax="0.25"
             data-parallax-text
           >
