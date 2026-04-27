@@ -94,11 +94,7 @@ export default function Services() {
                   </div>
                   {service.imageInset && (
                     <div
-                      className="service-inset absolute z-20 w-[58%] md:w-[50%] aspect-[4/3] bg-off-white p-2 md:p-3 shadow-2xl"
-                      style={{
-                        bottom: '-1rem',
-                        insetInlineEnd: '-1.25rem',
-                      }}
+                      className="service-inset absolute z-20 w-[55%] md:w-[50%] aspect-[4/3] bg-off-white p-2 md:p-3 shadow-2xl [bottom:-0.5rem] [inset-inline-end:0.5rem] md:[bottom:-1rem] md:[inset-inline-end:-1.25rem]"
                     >
                       <div className="w-full h-full overflow-hidden">
                         <img
