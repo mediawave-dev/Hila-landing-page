@@ -101,16 +101,6 @@ export default function Hero() {
       {/* For accessibility — visually hidden hero label */}
       <h1 className="sr-only">הילה קלרמן — צילום משפחות</h1>
 
-      {/* Scroll cue */}
-      <a
-        href="#about"
-        aria-label="גלילה לתוכן"
-        className="absolute bottom-20 inset-inline-start-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition-opacity duration-300"
-      >
-        <span className="font-serif text-xs tracking-[0.3em] text-off-white/90">גלילה</span>
-        <span className="block w-[1px] h-8 bg-off-white/70 hero-scroll-line" />
-      </a>
-
       {/* Slide indicators — padded for 44px min touch target */}
       <div className="absolute bottom-6 inset-inline-start-1/2 -translate-x-1/2 z-10 flex gap-1">
         {slides.map((_, i) => (

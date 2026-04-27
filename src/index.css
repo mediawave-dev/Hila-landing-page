@@ -86,16 +86,6 @@ section[id] {
   to { transform: scale(1.02) translate(1.5%, 0.5%); }
 }
 
-/* Hero scroll cue — gentle pulse to draw eye */
-@keyframes hero-scroll-pulse {
-  0%, 100% { transform: scaleY(1); opacity: 0.7; }
-  50% { transform: scaleY(1.4); opacity: 1; }
-}
-.hero-scroll-line {
-  transform-origin: top;
-  animation: hero-scroll-pulse 2.4s ease-in-out infinite;
-}
-
 .kenburns-0 { animation: kenburns-0 6s ease-out forwards; }
 .kenburns-1 { animation: kenburns-1 6s ease-out forwards; }
 .kenburns-2 { animation: kenburns-2 6s ease-out forwards; }

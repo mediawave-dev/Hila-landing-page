@@ -25,13 +25,22 @@ export default function Footer() {
           href="https://www.instagram.com/hila.photo.art"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-charcoal/60 hover:text-warm-brown transition-colors duration-300"
+          className="opacity-90 hover:opacity-100 transition-opacity duration-300"
           aria-label="אינסטגרם"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.5"/>
-            <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="1.5"/>
-            <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+            <defs>
+              <linearGradient id="instaGradFooter" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#feda75" />
+                <stop offset="25%" stopColor="#fa7e1e" />
+                <stop offset="50%" stopColor="#d62976" />
+                <stop offset="75%" stopColor="#962fbf" />
+                <stop offset="100%" stopColor="#4f5bd5" />
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#instaGradFooter)" strokeWidth="1.8"/>
+            <circle cx="12" cy="12" r="5" stroke="url(#instaGradFooter)" strokeWidth="1.8"/>
+            <circle cx="17.5" cy="6.5" r="1.5" fill="url(#instaGradFooter)"/>
           </svg>
         </a>
         <a
