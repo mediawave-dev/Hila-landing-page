@@ -95,11 +95,22 @@ export default function Hero() {
         </div>
       ))}
 
-      {/* Soft atmospheric tint — subtle vignette without competing with imagery */}
-      <div className="absolute inset-0 bg-gradient-to-t from-deep-black/25 via-transparent to-transparent" />
+      {/* Soft bottom vignette — anchors the signature without flattening the photo */}
+      <div className="absolute inset-0 bg-gradient-to-t from-deep-black/40 via-deep-black/10 to-transparent" />
 
-      {/* For accessibility — visually hidden hero label */}
-      <h1 className="sr-only">הילה קלרמן — צילום משפחות</h1>
+      {/* Signature — bottom-start corner (visually right in RTL) */}
+      <div
+        className="absolute bottom-14 md:bottom-16 z-10 text-start [inset-inline-start:1.5rem] md:[inset-inline-start:3rem]"
+        style={{ textShadow: '0 1px 2px rgba(0,0,0,0.35)' }}
+      >
+        <h1 className="font-serif text-4xl md:text-6xl text-off-white font-light leading-none">
+          הילה
+        </h1>
+        <div className="w-10 h-[1px] bg-off-white/55 my-4 md:my-5" />
+        <p className="font-serif text-xs md:text-sm text-off-white/90 font-light">
+          רגעים שנשארים לנצח
+        </p>
+      </div>
 
       {/* Slide indicators — padded for 44px min touch target */}
       <div className="absolute bottom-6 inset-inline-start-1/2 -translate-x-1/2 z-10 flex gap-1">
