@@ -5,6 +5,7 @@ import About from './components/About'
 import Services from './components/Services'
 import Gallery from './components/Gallery'
 import Testimonials from './components/Testimonials'
+import Packages from './components/Packages'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import SectionDivider from './components/SectionDivider'
@@ -162,6 +163,8 @@ export default function App() {
             style={{ background: 'linear-gradient(to top, var(--color-cream), transparent)' }}
           />
         </div>
+
+        <Packages />
 
         <Contact />
 

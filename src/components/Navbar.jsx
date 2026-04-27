@@ -5,6 +5,7 @@ const navLinks = [
   { href: '#services', label: 'שירותים' },
   { href: '#gallery', label: 'גלריה' },
   { href: '#testimonials', label: 'המלצות' },
+  { href: '#packages', label: 'חבילות' },
   { href: '#contact', label: 'צור קשר' },
 ]
 

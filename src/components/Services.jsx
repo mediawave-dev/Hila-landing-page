@@ -1,26 +1,53 @@
 const services = [
   {
-    title: 'משפחה',
-    description: 'צילומי משפחה טבעיים ומלאי חיים — כי כל משפחה היא סיפור ייחודי.',
+    title: 'צילומי משפחה',
     image: '/gallery/family/family-009.jpg',
     objectPosition: 'center 30%',
+    paragraphs: [
+      'יש רגעים ביום־יום שאנחנו לא מספיק עוצרים עליהם.',
+      'חיוך קטן, חיבוק אקראי, מבט של אהבה.',
+      'צילומי משפחה הם בדיוק זה — זמן איכות אמיתי יחד, שאני פשוט מתעדת מהצד. לא צילומים מאולצים שלא מרגישים אתכם.',
+      'אני יוצרת עבורכם חוויה נעימה, זורמת ולא מבוימת, כדי שתקבלו תמונות שמרגישות כמו החיים עצמם — עם כל הרגש, החום והחיבור שביניכם.',
+    ],
   },
   {
-    title: 'זוגיות',
-    description: 'לתפוס את הכימיה, את המבטים ואת הרגעים השקטים שביניכם.',
+    title: 'צילומי זוגיות',
     image: '/gallery/general/general-026.jpg',
+    paragraphs: [
+      'לא צריך אירוע מיוחד כדי לעצור רגע ולהיזכר למה בחרתם אחד בשנייה.',
+      'צילומי זוגיות הם הזדמנות לצאת מהשגרה, להיות יחד, לצחוק, להתקרב — והקסם קורה מעצמו.',
+      'אני שם רק כדי לתפוס אתכם בדיוק כמו שאתם. בלי פוזות מוגזמות ובלי לחץ. רק אתם והלב שלכם.',
+    ],
   },
   {
-    title: 'הריון',
-    description: 'תיעוד התקופה הקסומה הזו באור רך ובאווירה אינטימית.',
-    image: '/gallery/general/general-007.jpg',
-    objectPosition: 'center 30%',
+    title: 'צילומי ברית / ה',
+    image: '/gallery/brit/brit-002.jpg',
+    paragraphs: [
+      'הרגעים הראשונים האלה עוברים כל כך מהר.',
+      'צילומי ברית/ה הם לא רק תיעוד של האירוע, אלא של כל מה שמסביב — ההתרגשות, המשפחה, החיבוקים והאהבה.',
+      'אני מצלמת ברגישות ובשקט, ותופסת גם את הרגעים הקטנים שאולי בכלל לא שמתם לב אליהם.',
+      'כי בסוף, אלה הזיכרונות שנשארים.',
+    ],
   },
   {
-    title: 'אירועים',
-    description: 'מרגעי ההכנות ועד לריקוד האחרון — הכל נתפס בעדשה.',
-    image: '/gallery/family/family-041.jpg',
-    objectPosition: 'center 40%',
+    title: 'צילומי גיל שנה',
+    image: '/gallery/family/family-005.jpg',
+    paragraphs: [
+      'גיל שנה זה גיל מיוחד! מצד אחד הקטנים שלנו כבר בעלי אישיות עם אופי, ומצד שני עדיין כל כך תינוקיים ומתוקים.',
+      'בצילומים אני לא מצפה מהם "לשתף פעולה" — אני נותנת להם לזוז, לחקור, להיות מי שהם, ואני שם כדי לתפוס אותם בדיוק ברגעים הכי יפים.',
+      'לפעמים זה צחוק מתגלגל, לפעמים מבט סקרן, ולפעמים גם קצת בלגן — וזה בדיוק הקסם.',
+      'אלה התמונות שבאמת מזכירות איך הם היו, בדיוק בתקופה הזאת.',
+    ],
+  },
+  {
+    title: 'צילומי חלאקה',
+    image: '/gallery/halake/halake-002.jpg',
+    paragraphs: [
+      'בוק חלאקה הוא זמן לעצור רגע, לתעד את הילד כמו שהוא עכשיו — לפני השינוי.',
+      'עם הלוק המתוק, השיער שעוד רגע יורד, והאופי שכבר כל כך נוכח.',
+      'אני יוצרת עבורכם חוויה רגועה ונעימה, בלי לחץ ובלי למהר לשום מקום, כדי שתקבלו תמונות טבעיות, מדויקות ואמיתיות.',
+      'כי זה הרגע הזה — שאת מסתכלת עליו ויודעת שהוא כבר לא יחזור בדיוק ככה.',
+    ],
   },
 ]
 
@@ -31,36 +58,50 @@ export default function Services() {
         <h2 className="scroll-reveal font-serif text-4xl md:text-5xl font-light text-charcoal text-center mb-4">
           שירותים
         </h2>
-        <div className="scroll-reveal heading-ornament mx-auto mb-16"><span /></div>
+        <div className="scroll-reveal heading-ornament mx-auto mb-20 md:mb-24"><span /></div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              className="scroll-reveal group cursor-pointer"
-              style={{ transitionDelay: `${index * 0.12}s` }}
-            >
-              <div className="hover-frame relative aspect-[3/4] overflow-hidden mb-5 -mx-6 sm:mx-0">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  width={800}
-                  height={1067}
-                  className="w-full h-full object-cover"
-                  style={service.objectPosition ? { objectPosition: service.objectPosition } : undefined}
-                  data-parallax="-0.06"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-all duration-500" />
-              </div>
-              <h3 className="font-serif text-2xl font-light text-charcoal mb-2">
-                {service.title}
-              </h3>
-              <p className="text-sm font-light text-taupe leading-relaxed">
-                {service.description}
-              </p>
-            </div>
-          ))}
+        <div className="space-y-24 md:space-y-32">
+          {services.map((service, index) => {
+            const flipped = index % 2 === 1
+            return (
+              <article
+                key={service.title}
+                className="grid md:grid-cols-2 gap-10 md:gap-16 items-center"
+              >
+                <div
+                  className={`scroll-reveal hover-frame relative aspect-[4/5] overflow-hidden -mx-6 md:mx-0 ${
+                    flipped ? 'md:order-2' : ''
+                  }`}
+                >
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    width={800}
+                    height={1000}
+                    className="w-full h-full object-cover"
+                    style={service.objectPosition ? { objectPosition: service.objectPosition } : undefined}
+                    data-parallax="-0.05"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div
+                  className={`scroll-reveal ${flipped ? 'md:order-1' : ''}`}
+                  style={{ transitionDelay: '0.15s' }}
+                >
+                  <div className="w-10 h-[1px] bg-warm-brown/50 mb-6" />
+                  <h3 className="font-serif text-3xl md:text-4xl font-light text-charcoal mb-6">
+                    {service.title}
+                  </h3>
+                  <div className="space-y-4 text-charcoal/80 font-light leading-relaxed">
+                    {service.paragraphs.map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            )
+          })}
         </div>
       </div>
     </section>
