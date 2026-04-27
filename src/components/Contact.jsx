@@ -44,9 +44,10 @@ export default function Contact() {
                 id="name"
                 name="name"
                 required
+                autoComplete="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full border-b border-sand bg-transparent py-3 text-charcoal font-light focus:border-warm-brown focus:outline-none transition-colors"
+                className="w-full border-b border-sand bg-transparent py-3 text-base text-charcoal font-light focus:border-warm-brown focus:outline-none transition-colors"
               />
             </div>
 
@@ -59,9 +60,11 @@ export default function Contact() {
                 id="phone"
                 name="phone"
                 required
+                autoComplete="tel"
+                inputMode="tel"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full border-b border-sand bg-transparent py-3 text-charcoal font-light focus:border-warm-brown focus:outline-none transition-colors"
+                className="w-full border-b border-sand bg-transparent py-3 text-base text-charcoal font-light focus:border-warm-brown focus:outline-none transition-colors"
               />
             </div>
 
@@ -75,13 +78,15 @@ export default function Contact() {
                 required
                 value={formData.service}
                 onChange={handleChange}
-                className="w-full border-b border-sand bg-transparent py-3 text-charcoal font-light focus:border-warm-brown focus:outline-none transition-colors appearance-none"
+                className="w-full border-b border-sand bg-transparent py-3 text-base text-charcoal font-light focus:border-warm-brown focus:outline-none transition-colors appearance-none"
               >
                 <option value="">בחרו שירות</option>
                 <option value="משפחה">צילומי משפחה</option>
                 <option value="זוגיות">צילומי זוגיות</option>
-                <option value="הריון">צילומי הריון</option>
-                <option value="אירועים">צילומי אירועים</option>
+                <option value="ברית/ה">צילומי ברית / ה</option>
+                <option value="גיל שנה">צילומי גיל שנה</option>
+                <option value="חלאקה">צילומי חלאקה</option>
+                <option value="אחר">משהו אחר — אשמח להתאים אישית</option>
               </select>
             </div>
 
@@ -95,13 +100,13 @@ export default function Contact() {
                 rows="3"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full border-b border-sand bg-transparent py-3 text-charcoal font-light focus:border-warm-brown focus:outline-none transition-colors resize-none"
+                className="w-full border-b border-sand bg-transparent py-3 text-base text-charcoal font-light focus:border-warm-brown focus:outline-none transition-colors resize-none"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-soft-black text-off-white py-4 font-light text-sm hover:bg-warm-brown transition-colors duration-500"
+              className="w-full bg-soft-black text-off-white py-4 rounded-md font-light text-sm hover:bg-warm-brown transition-colors duration-500"
             >
               שליחה ב-WhatsApp
             </button>

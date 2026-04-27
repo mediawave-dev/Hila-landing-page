@@ -5,7 +5,7 @@ export default function About() {
         {/* Image — oval portrait frame */}
         <div className="scroll-reveal flex justify-center">
           <div
-            className="w-[320px] h-[420px] md:w-[440px] md:h-[560px] overflow-hidden"
+            className="w-full max-w-[320px] md:max-w-[440px] aspect-[320/420] md:aspect-[440/560] overflow-hidden"
             style={{
               borderRadius: '50%',
               boxShadow: '0 10px 40px rgba(0,0,0,0.1)',

@@ -80,7 +80,7 @@ export default function App() {
     <>
       <a
         href="#about"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:inset-inline-start-4 focus:z-[100] focus:bg-soft-black focus:text-off-white focus:px-4 focus:py-2 focus:text-sm"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:inset-inline-start-4 focus:z-[100] focus:bg-soft-black focus:text-off-white focus:px-4 focus:py-2 focus:text-sm focus:rounded-md"
       >
         דלג לתוכן
       </a>
@@ -118,7 +118,7 @@ export default function App() {
         {/* Services → Gallery: parallax break */}
         <ParallaxBreak
           image="/gallery/general/3U2A4714_websize.jpg"
-          height="h-[70vh] md:h-[85vh]"
+          height="h-[70svh] md:h-[85vh]"
           topBlend="dusty-rose"
           bottomBlend="off-white"
           objectPosition="center top"
