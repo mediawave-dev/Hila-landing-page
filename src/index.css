@@ -16,6 +16,8 @@
   --color-light-caramel: oklch(0.78 0.05 58);
   --color-dusty-rose: oklch(0.97 0.003 80);
   --color-warm-gray: oklch(0.40 0.02 55);
+  --color-whatsapp: oklch(0.82 0.12 155);
+  --color-whatsapp-hover: oklch(0.74 0.14 155);
   --font-serif: "Frank Ruhl Libre", serif;
   --font-sans: "Heebo", sans-serif;
 }

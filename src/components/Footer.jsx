@@ -38,7 +38,7 @@ export default function Footer() {
           href={`https://wa.me/972529571799?text=${`${encodeURIComponent('היי הילה')}%20%F0%9F%99%82%0A${encodeURIComponent('אשמח לשמוע פרטים על צילום')}%20%F0%9F%93%B8`}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-charcoal/60 hover:text-warm-brown transition-colors duration-300"
+          className="text-whatsapp hover:text-whatsapp-hover transition-colors duration-300"
           aria-label="וואטסאפ"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
