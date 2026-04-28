@@ -52,6 +52,7 @@ export default function Navbar() {
   }, [])
 
   return (
+    <>
     <nav
       className={`fixed top-0 inset-inline-start-0 inset-inline-end-0 w-full z-50 transition-all duration-500 pt-[env(safe-area-inset-top)] ${
         scrolled
@@ -116,41 +117,43 @@ export default function Navbar() {
           />
         </a>
       </div>
-
-      {/* Mobile full-screen overlay */}
-      <div
-        ref={menuRef}
-        id="mobile-menu"
-        role="dialog"
-        aria-modal="true"
-        aria-label="תפריט ניווט"
-        onKeyDown={handleMenuKeyDown}
-        className={`md:hidden fixed inset-0 bg-dusty-rose/98 backdrop-blur-xl flex items-center justify-center transition-all duration-500 overscroll-none ${
-          isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
-        }`}
-      >
-        <ul className="flex flex-col items-center gap-8">
-          {navLinks.map((link, i) => (
-            <li
-              key={link.href}
-              className={`transition-all duration-500 ${
-                isOpen
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-4'
-              }`}
-              style={{ transitionDelay: isOpen ? `${i * 80}ms` : '0ms' }}
-            >
-              <a
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="font-serif text-2xl font-light text-charcoal/85 hover:text-warm-brown transition-colors duration-300"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
     </nav>
+
+    {/* Mobile full-screen overlay — sibling of <nav> so its `fixed` is not
+        contained by the nav's backdrop-filter when scrolled */}
+    <div
+      ref={menuRef}
+      id="mobile-menu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="תפריט ניווט"
+      onKeyDown={handleMenuKeyDown}
+      className={`md:hidden fixed inset-0 z-40 bg-dusty-rose/98 backdrop-blur-xl flex items-center justify-center transition-all duration-500 overscroll-none ${
+        isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+      }`}
+    >
+      <ul className="flex flex-col items-center gap-8">
+        {navLinks.map((link, i) => (
+          <li
+            key={link.href}
+            className={`transition-all duration-500 ${
+              isOpen
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-4'
+            }`}
+            style={{ transitionDelay: isOpen ? `${i * 80}ms` : '0ms' }}
+          >
+            <a
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="font-serif text-2xl font-light text-charcoal/85 hover:text-warm-brown transition-colors duration-300"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    </>
   )
 }
