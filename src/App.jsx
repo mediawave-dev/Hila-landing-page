@@ -58,11 +58,13 @@ export default function App() {
             if (noScale) {
               el.style.transform = `translateY(${translation}px)`
             } else {
-              // Smaller scale buffer (4%) — keeps source pixels sharper while
-              // still hiding edge during parallax shift
+              // Scale only enough to hide the edge that the current shift exposes.
+              // At rest (translation=0) → scale 1.0 (no upscale, source is sharp);
+              // at max shift (4% of height) → scale 1.08 (just enough buffer).
               const maxShift = rect.height * 0.04
               const capped = Math.max(-maxShift, Math.min(maxShift, translation))
-              el.style.transform = `translateY(${capped}px) scale(1.08)`
+              const scale = 1 + (Math.abs(capped) / rect.height) * 2
+              el.style.transform = `translateY(${capped}px) scale(${scale})`
             }
           }
         })
@@ -93,10 +95,10 @@ export default function App() {
 
         {/* About → Services: parallax break with quote */}
         <ParallaxBreak
-          image="/gallery/general/general-020.jpg"
+          image="/gallery/general/3U2A5843_websize.jpg"
           topBlend="off-white"
           bottomBlend="dusty-rose"
-          objectPosition="center 20%"
+          objectPosition="center 35%"
         >
           <p
             className="font-serif text-2xl md:text-4xl lg:text-5xl text-off-white font-light text-center leading-relaxed"
@@ -112,21 +114,21 @@ export default function App() {
 
         {/* Services → Gallery: parallax break */}
         <ParallaxBreak
-          image="/gallery/general/3U2A4714_websize.jpg"
+          image="/gallery/pregnancy/pregnancy-024.jpg"
           height="h-[70svh] md:h-[85vh]"
           topBlend="dusty-rose"
           bottomBlend="off-white"
-          objectPosition="center top"
+          objectPosition="center 35%"
         />
 
         <Gallery />
 
         {/* Gallery → Testimonials: parallax break with quote */}
         <ParallaxBreak
-          image="/gallery/pregnancy/pregnancy-010.jpg"
+          image="/gallery/family/family-007.jpg"
           topBlend="off-white"
           bottomBlend="warm-tan"
-          objectPosition="center 30%"
+          objectPosition="center 40%"
         >
           <p
             className="font-serif text-2xl md:text-4xl lg:text-5xl text-off-white font-light text-center leading-relaxed"
@@ -143,8 +145,8 @@ export default function App() {
         {/* Testimonials → Contact: full-width image */}
         <div className="relative">
           <img
-            src="/gallery/general/3U2A4667_websize.jpg"
-            alt="משפחה בשקיעה"
+            src="/gallery/family/family-021.jpg"
+            alt="חיבוק משפחתי בשקיעה"
             className="w-full h-auto block"
             loading="lazy"
           />

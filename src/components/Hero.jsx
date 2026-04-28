@@ -2,20 +2,20 @@ import { useState, useEffect, useLayoutEffect, useCallback, useRef } from 'react
 
 const slides = [
   {
-    src: '/gallery/general/general-001.jpg',
-    alt: 'צילום משפחה',
+    src: '/gallery/general/3U2A4667_websize.jpg',
+    alt: 'משפחה הולכת בשביל אל תוך השקיעה',
   },
   {
-    src: '/gallery/pregnancy/pregnancy-016.jpg',
-    alt: 'צילום הריון',
+    src: '/gallery/pregnancy/pregnancy-009.jpg',
+    alt: 'זוג בהריון רוקדים בין סוסים בגולדן אוור',
   },
   {
-    src: '/gallery/family/family-020.jpg',
-    alt: 'צילום משפחה בטבע',
+    src: '/gallery/family/family-043.jpg',
+    alt: 'אם בהריון ופעוט בשדה פרגים בגולדן אוור',
   },
   {
     src: '/gallery/general/general-018.jpg',
-    alt: 'צילום זוגיות',
+    alt: 'זוג מתחבק תחת שמיים דרמטיים',
   },
 ]
 

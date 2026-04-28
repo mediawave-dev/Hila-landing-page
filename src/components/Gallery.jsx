@@ -1,14 +1,14 @@
 const galleryImages = [
-  { src: '/gallery/general/general-010.jpg', alt: 'צילום משפחה', span: 'row-span-2', objectPosition: 'center 25%' },
-  { src: '/gallery/family/family-017.jpg', alt: 'אבא ובת' },
-  { src: '/gallery/pregnancy/pregnancy-025.jpg', alt: 'צילום זוגי בחוף' },
-  { src: '/gallery/pregnancy/pregnancy-001.jpg', alt: 'צילום הריון', objectPosition: 'center 30%' },
-  { src: '/gallery/family/family-031.jpg', alt: 'צילום משפחה בטבע', span: 'row-span-2', objectPosition: 'center 45%' },
-  { src: '/gallery/general/general-012.jpg', alt: 'צילום משפחתי' },
-  { src: '/gallery/pregnancy/pregnancy-015.jpg', alt: 'צללית הריון', objectPosition: 'center 35%' },
-  { src: '/gallery/family/family-040.jpg', alt: 'ניובורן' },
-  { src: '/gallery/general/3U2A5843_websize.jpg', alt: 'ניובורן ישן' },
-  { src: '/gallery/general/IMG_7750_websize_websize.jpg', alt: 'צילום זוגי בחוף' },
+  { src: '/gallery/general/general-033.jpg', alt: 'סוס מתקרב לבטן הריון', span: 'row-span-2', objectPosition: 'center 35%' },
+  { src: '/gallery/pregnancy/IMG_7935_websize_websize.jpg', alt: 'בטן הריון ולחיצת יד מול הים', objectPosition: 'center 40%' },
+  { src: '/gallery/family/family-027.jpg', alt: 'יד תינוק ניובורן' },
+  { src: '/gallery/family/family-016.jpg', alt: 'תינוקת מחייכת בגולדן אוור', objectPosition: 'center 30%' },
+  { src: '/gallery/halake/IMG_8263_websize.jpg', alt: 'ילד עם תלתלים זהובים בדשא', span: 'row-span-2', objectPosition: 'center 25%' },
+  { src: '/gallery/family/family-035.jpg', alt: 'בטן הריון בשמלה אדומה' },
+  { src: '/gallery/pregnancy/pregnancy-028.jpg', alt: 'אם הריונית עם פעוט בשדה פרגים', objectPosition: 'center 40%' },
+  { src: '/gallery/general/IMG_7750_websize_websize.jpg', alt: 'תינוק ניובורן ישן' },
+  { src: '/gallery/pregnancy/pregnancy-026.jpg', alt: 'זוג בהריון על חוף הים' },
+  { src: '/gallery/general/general-013.jpg', alt: 'פעוטה על בטן ההיריון של אמא', objectPosition: 'center 25%' },
 ]
 
 export default function Gallery() {

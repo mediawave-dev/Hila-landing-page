@@ -72,22 +72,24 @@ section[id] {
   transform: translateY(0);
 }
 
-/* Ken Burns effect — 4 directional variants for hero slides */
+/* Ken Burns effect — 4 directional variants for hero slides.
+   Capped at scale(1.08) to preserve source pixel sharpness — gentler motion,
+   but slides stay crisp on 1920+ displays where the source already upscales ~1.2×. */
 @keyframes kenburns-0 {
-  from { transform: scale(1.02); }
-  to { transform: scale(1.15) translate(-1.5%, -0.5%); }
+  from { transform: scale(1.0); }
+  to { transform: scale(1.08) translate(-1%, -0.4%); }
 }
 @keyframes kenburns-1 {
-  from { transform: scale(1.02); }
-  to { transform: scale(1.13) translate(1%, -1.5%); }
+  from { transform: scale(1.0); }
+  to { transform: scale(1.07) translate(0.7%, -1%); }
 }
 @keyframes kenburns-2 {
-  from { transform: scale(1.15); }
-  to { transform: scale(1.02) translate(-0.5%, 1%); }
+  from { transform: scale(1.08); }
+  to { transform: scale(1.0) translate(-0.4%, 0.7%); }
 }
 @keyframes kenburns-3 {
-  from { transform: scale(1.12); }
-  to { transform: scale(1.02) translate(1.5%, 0.5%); }
+  from { transform: scale(1.07); }
+  to { transform: scale(1.0) translate(1%, 0.4%); }
 }
 
 .kenburns-0 { animation: kenburns-0 6s ease-out forwards; }

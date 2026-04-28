@@ -1,7 +1,7 @@
 const services = [
   {
     title: 'צילומי משפחה',
-    image: '/gallery/family/family-009.jpg',
+    image: '/gallery/general/3U2A4714_websize.jpg',
     objectPosition: 'center 30%',
     paragraphs: [
       'יש רגעים ביום־יום שאנחנו לא מספיק עוצרים עליהם.',
@@ -12,7 +12,8 @@ const services = [
   },
   {
     title: 'צילומי זוגיות',
-    image: '/gallery/general/general-026.jpg',
+    image: '/gallery/family/family-036.jpg',
+    objectPosition: 'center 40%',
     paragraphs: [
       'לא צריך אירוע מיוחד כדי לעצור רגע ולהיזכר למה בחרתם אחד בשנייה.',
       'צילומי זוגיות הם הזדמנות לצאת מהשגרה, להיות יחד, לצחוק, להתקרב — והקסם קורה מעצמו.',
@@ -34,8 +35,8 @@ const services = [
   },
   {
     title: 'צילומי גיל שנה',
-    image: '/gallery/family/family-005.jpg',
-    objectPosition: '15% center',
+    image: '/gallery/family/3U2A4306_websize.jpg',
+    objectPosition: 'center 30%',
     paragraphs: [
       'גיל שנה זה גיל מיוחד! מצד אחד הקטנים שלנו כבר בעלי אישיות עם אופי, ומצד שני עדיין כל כך תינוקיים ומתוקים.',
       'בצילומים אני לא מצפה מהם "לשתף פעולה" — אני נותנת להם לזוז, לחקור, להיות מי שהם, ואני שם כדי לתפוס אותם בדיוק ברגעים הכי יפים.',
@@ -45,7 +46,8 @@ const services = [
   },
   {
     title: 'צילומי חלאקה',
-    image: '/gallery/halake/halake-002.jpg',
+    image: '/gallery/halake/IMG_8234_websize.jpg',
+    objectPosition: 'center 30%',
     paragraphs: [
       'בוק חלאקה הוא זמן לעצור רגע, לתעד את הילד כמו שהוא עכשיו — לפני השינוי.',
       'עם הלוק המתוק, השיער שעוד רגע יורד, והאופי שכבר כל כך נוכח.',
