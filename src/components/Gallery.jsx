@@ -24,7 +24,7 @@ export default function Gallery() {
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className={`scroll-reveal hover-frame overflow-hidden group relative cursor-pointer ${image.span || ''}`}
+              className={`scroll-reveal hover-frame overflow-hidden group ${image.span || ''}`}
               style={{ transitionDelay: `${(index % 4) * 0.1}s` }}
             >
               <img
@@ -36,12 +36,6 @@ export default function Gallery() {
                 style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
                 loading="lazy"
               />
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-deep-black/0 group-hover:bg-deep-black/50 transition-all duration-500 flex items-end justify-center">
-                <span className="font-serif text-sm font-light text-off-white opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-500 pb-5">
-                  {image.alt}
-                </span>
-              </div>
             </div>
           ))}
         </div>
