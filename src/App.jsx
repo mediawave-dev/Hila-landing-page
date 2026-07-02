@@ -6,6 +6,7 @@ import Services from './components/Services'
 import Gallery from './components/Gallery'
 import Testimonials from './components/Testimonials'
 import Packages from './components/Packages'
+import StylingGuide from './components/StylingGuide'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import SectionDivider from './components/SectionDivider'
@@ -163,6 +164,10 @@ export default function App() {
         </div>
 
         <Packages />
+
+        {/* Packages → Contact: styling guide. Demonstrates the "ליווי והכוונה"
+            promise made in Packages, then bridges into the contact form */}
+        <StylingGuide />
 
         <Contact />
 

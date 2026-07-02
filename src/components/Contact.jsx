@@ -86,7 +86,7 @@ export default function Contact() {
                 <option value="ברית/ה">צילומי ברית / ה</option>
                 <option value="גיל שנה">צילומי גיל שנה</option>
                 <option value="חלאקה">צילומי חלאקה</option>
-                <option value="אחר">משהו אחר — אשמח להתאים אישית</option>
+                <option value="אחר">משהו אחר, אשמח להתאים אישית</option>
               </select>
             </div>
 

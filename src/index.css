@@ -267,6 +267,29 @@ section[id] {
   }
 }
 
+/* ── Styling guide palette swatches ──
+   Color dots cascade in (right→left in RTL document order) once the parent
+   card's .scroll-reveal is revealed. Per-swatch delay is set inline. */
+.palette-swatch {
+  opacity: 0;
+  transform: translateY(14px) scale(0.7);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.32, 0.72, 0.32, 1);
+  will-change: transform, opacity;
+}
+.scroll-reveal.revealed .palette-swatch {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .palette-swatch {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* Hide scrollbar for horizontal carousels */
 .scrollbar-hide {
   -ms-overflow-style: none;

@@ -6,6 +6,7 @@ const navLinks = [
   { href: '#gallery', label: 'גלריה' },
   { href: '#testimonials', label: 'המלצות' },
   { href: '#packages', label: 'חבילות' },
+  { href: '#styling', label: 'מה ללבוש' },
   { href: '#contact', label: 'צור קשר' },
 ]
 
@@ -70,17 +71,17 @@ export default function Navbar() {
           <img
             src="/photos/hila-logo.png"
             alt="הילה"
-            className={`h-auto transition-all duration-500 ${scrolled ? 'w-[160px]' : 'w-[260px]'}`}
+            className={`h-auto transition-all duration-500 ${scrolled ? 'w-[160px]' : 'w-[200px] lg:w-[260px]'}`}
             style={{ filter: 'brightness(0)' }}
           />
         </a>
 
-        <ul className="flex items-center gap-8 lg:gap-10">
+        <ul className="flex items-center gap-5 lg:gap-8 xl:gap-10">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="relative text-sm font-light text-charcoal/75 hover:text-charcoal transition-colors duration-300 after:absolute after:bottom-[-4px] after:inset-inline-end-0 after:w-0 after:h-[1px] after:bg-warm-brown after:transition-all after:duration-300 hover:after:w-full"
+                className="relative whitespace-nowrap text-sm font-light text-charcoal/75 hover:text-charcoal transition-colors duration-300 after:absolute after:bottom-[-4px] after:start-0 after:w-0 after:h-[1px] after:bg-warm-brown after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.label}
               </a>
